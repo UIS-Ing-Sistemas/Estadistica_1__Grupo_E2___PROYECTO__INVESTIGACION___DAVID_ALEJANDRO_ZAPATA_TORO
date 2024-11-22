@@ -1,0 +1,32 @@
+---
+title: "EDA Project__Estadistica_1"
+author: "David Zapata - Marian Becerra"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Consumo de Sustancias Psicoactivas en Santander ![](images/SUSTANCIAS-PSICOACTIVAS.jpg)
+
+## Introducción
+
+Una de las principales problematicas sociales que se lleva dando en el pais es el consumo de sustancias psicoactivas en adultos, jovenes e incluso menores de edad.\
+\
+Colombia es un país que tristemente es conocido mundialmente por los problemas de narcotrafico que se han presentado a lo largo de los años, esta misma situación ha desencadenado violencia y ciertas guerras internas en el país causando así la muerte de muchas personas inocentes y ajenas a estas situaciones, a pesar de todo lo que ha pasado esto no ha impedido que la población deje a un lado este tipo de costumbres y habitos, por esta razón trabajaremos para ver como es el consumo de sustancias en el departamento de en la región y como ha evolucionado esta situación a lo largo del tiempo.
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
