@@ -9,13 +9,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Consumo de Sustancias Psicoactivas en Santander ![](images/SUSTANCIAS-PSICOACTIVAS.jpg)
+## Consumo de Sustancias Psicoactivas en Santander ![](C:\Users\ASUS\Desktop\Estadistica\Estadistica_1__Grupo_E2___PROYECTO__INVESTIGACION___DAVID_ALEJANDRO_ZAPATA_TORO\Documento%20Rmarkdown\SUSTANCIAS-PSICOACTIVAS)
 
 ## Introducción
 
 Una de las principales problematicas sociales que se lleva dando en el pais es el consumo de sustancias psicoactivas en adultos, jovenes e incluso menores de edad.\
 \
-Colombia es un país que tristemente es conocido mundialmente por los problemas de narcotrafico que se han presentado a lo largo de los años, esta misma situación ha desencadenado violencia y ciertas guerras internas en el país causando así la muerte de muchas personas inocentes y ajenas a estas situaciones, a pesar de todo lo que ha pasado esto no ha impedido que la población deje a un lado este tipo de costumbres y habitos, por esta razón trabajaremos para ver como es el consumo de sustancias en el departamento de en la región y como ha evolucionado esta situación a lo largo del tiempo.
+Colombia es un país que tristemente es conocido mundialmente por los problemas de narcotrafico que se han presentado a lo largo de los años, esta misma situación ha desencadenado violencia y ciertas guerras internas en el país causando así la muerte de muchas personas inocentes y ajenas a estas situaciones, a pesar de todo lo que ha pasado esto no ha impedido que la población deje a un lado este tipo de costumbres y habitos, por esta razón trabajaremos para ver como es el consumo de sustancias en el departamento de santander, está invetigación busca responder si es realmente una problematica el consumo de sustancias en el país.
 
 ```{r cars}
 summary(cars)
