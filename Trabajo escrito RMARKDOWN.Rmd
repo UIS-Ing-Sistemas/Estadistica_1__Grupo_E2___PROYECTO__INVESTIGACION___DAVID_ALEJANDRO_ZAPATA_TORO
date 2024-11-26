@@ -9,9 +9,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Consumo de Sustancias Psicoactivas en Santander 
+## Consumo de Sustancias Psicoactivas en Santander
 
-![Consumo por sustancia en Santander](Plots and Graphics/Total_consumo.png)
+![Consumo por sustancia en Santander](Plots%20and%20Graphics/Total_consumo.png)
 
 ## Introducción
 
