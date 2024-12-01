@@ -3,11 +3,38 @@ library(dplyr)
 
 #### CONSUMIDORES COLOMBIA ####
 consumidores_total_colombia <- read_csv("C:/Users/ASUS/Desktop/Estadistica/Estadistica_1__Grupo_E2___PROYECTO__INVESTIGACION___DAVID_ALEJANDRO_ZAPATA_TORO/DATOS DANE/Datos separados/Colombia/consumidores_total_colombia.csv")
+
+ consumidores_total_colombia <- select(consumidores_total_colombia, -SECUENCIA_ENCUESTA, -SECUENCIA_P, -ORDEN, -ESTADO_ENCUESTA, -RECO_DIC)
+
 consumdores_marihuana_colombia <- read_csv("C:/Users/ASUS/Desktop/Estadistica/Estadistica_1__Grupo_E2___PROYECTO__INVESTIGACION___DAVID_ALEJANDRO_ZAPATA_TORO/DATOS DANE/Datos separados/Colombia/consumdores_marihuana_colombia.csv")
+
+consumdores_marihuana_colombia <- select(consumdores_marihuana_colombia, -SECUENCIA_ENCUESTA.y, -SECUENCIA_P.y)
+consumdores_marihuana_colombia <- consumdores_marihuana_colombia %>%
+  select(where(~ !all(is.na(.))))
+
 consumidores_basuco_colombia <- read_csv("C:/Users/ASUS/Desktop/Estadistica/Estadistica_1__Grupo_E2___PROYECTO__INVESTIGACION___DAVID_ALEJANDRO_ZAPATA_TORO/DATOS DANE/Datos separados/Colombia/consumidores_basuco_colombia.csv")
+
+consumidores_basuco_colombia <- select(consumidores_basuco_colombia, -SECUENCIA_ENCUESTA.x, -SECUENCIA_P.x, -ORDEN.x,-SECUENCIA_ENCUESTA.y, -SECUENCIA_P.y, -ORDEN.y, -RECO_DIC)
+consumidores_basuco_colombia <- consumidores_basuco_colombia %>%
+  select(where(~ !all(is.na(.))))
+
 consumidores_cocaina_colombia <- read_csv("C:/Users/ASUS/Desktop/Estadistica/Estadistica_1__Grupo_E2___PROYECTO__INVESTIGACION___DAVID_ALEJANDRO_ZAPATA_TORO/DATOS DANE/Datos separados/Colombia/consumidores_cocaina_colombia.csv")
+
+consumidores_cocaina_colombia <- select(consumidores_cocaina_colombia, -SECUENCIA_ENCUESTA.x, -SECUENCIA_P.x, -ORDEN.x, -SECUENCIA_ENCUESTA.y, -SECUENCIA_P.y, -ORDEN.y, -RECO_DIC)
+consumidores_cocaina_colombia <- consumidores_cocaina_colombia %>%
+  select(where(~ !all(is.na(.))))
+
 consumidores_extasis_colombia <- read_csv("C:/Users/ASUS/Desktop/Estadistica/Estadistica_1__Grupo_E2___PROYECTO__INVESTIGACION___DAVID_ALEJANDRO_ZAPATA_TORO/DATOS DANE/Datos separados/Colombia/consumidores_extasis_colombia.csv")
+
+consumidores_extasis_colombia <- select(consumidores_extasis_colombia, -SECUENCIA_ENCUESTA.x, -SECUENCIA_P.x, -ORDEN.x, -SECUENCIA_ENCUESTA.y, -SECUENCIA_P.y, -ORDEN.y, -ESTADO_ENCUESTA, -RECO_DIC)
+consumidores_extasis_colombia <- consumidores_extasis_colombia %>%
+  select(where(~ !all(is.na(.))))
+
 consumidores_heroina_colombia <- read_csv("C:/Users/ASUS/Desktop/Estadistica/Estadistica_1__Grupo_E2___PROYECTO__INVESTIGACION___DAVID_ALEJANDRO_ZAPATA_TORO/DATOS DANE/Datos separados/Colombia/consumidores_heroina_colombia.csv")
+
+consumidores_heroina_colombia <- select(consumidores_heroina_colombia, -SECUENCIA_ENCUESTA.x, -SECUENCIA_P.x, -ORDEN.x, -SECUENCIA_ENCUESTA.y, -SECUENCIA_P.y, -ORDEN.y, -ESTADO_ENCUESTA, -RECO_DIC)
+consumidores_heroina_colombia <- consumidores_heroina_colombia %>%
+  select(where(~ !all(is.na(.))))
 
 #### CLASIFICACIÓN CONSUMIDORES POR DPTO ####
 
@@ -336,6 +363,38 @@ consumidores_heroina_san_andres <- consumidores_heroina_colombia %>%
   filter(startsWith(as.character(consumidores_heroina_colombia$Depmuni), "88"))
 
 write.csv(consumidores_heroina_san_andres, "consumidores_heroina_san_andres.csv", row.names = FALSE)
+
+#### SANTANDER ####
+consumidores_santander <- consumidores_total_colombia %>%
+  filter(startsWith(as.character(consumidores_total_colombia$Depmuni), "68"))
+
+write.csv(consumidores_santander, "consumidores_santander.csv", row.names = FALSE)
+
+consumidores_marihuna_santander <- consumdores_marihuana_colombia %>%
+  filter(startsWith(as.character(consumdores_marihuana_colombia$Depmuni), "68"))
+
+write.csv(consumidores_marihuna_santander, "consumidores_marihuna_santander.csv", row.names = FALSE)
+
+consumidores_basuco_santander <- consumidores_basuco_colombia %>%
+  filter(startsWith(as.character(consumidores_basuco_colombia$Depmuni), "68"))
+
+write.csv(consumidores_basuco_santander, "consumidores_basuco_santander.csv", row.names = FALSE)
+
+consumidores_cocaina_santander <- consumidores_cocaina_colombia %>%
+  filter(startsWith(as.character(consumidores_cocaina_colombia$Depmuni), "68"))
+
+write.csv(consumidores_cocaina_santander, "consumidores_cocaina_santander.csv", row.names = FALSE)
+
+consumidores_extasis_santander <- consumidores_extasis_colombia %>%
+  filter(startsWith(as.character(consumidores_extasis_colombia$Depmuni), "68"))
+
+write.csv(consumidores_extasis_santander, "consumidores_extasis_santander.csv", row.names = FALSE)
+
+consumidores_heroina_santander <- consumidores_heroina_colombia %>%
+  filter(startsWith(as.character(consumidores_heroina_colombia$Depmuni), "68"))
+
+write.csv(consumidores_heroina_santander, "consumidores_heroina_santander.csv", row.names = FALSE)
+
 
 #### SUCRE ####
 consumidores_sucre <- consumidores_total_colombia %>%
