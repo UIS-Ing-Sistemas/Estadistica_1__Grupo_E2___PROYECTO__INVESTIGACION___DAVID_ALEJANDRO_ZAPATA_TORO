@@ -1,0 +1,441 @@
+library(readr)
+
+#LIMPIEZA AMAZONAS
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/AMAZONAS")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/AMAZONAS/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/AMAZONAS/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/AMAZONAS/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/AMAZONAS/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/AMAZONAS/filtrado_marihuana.csv", row.names = FALSE)
+
+
+#LIMPIEZA ANTIOQUIA
+
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ANTIOQUIA")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ANTIOQUIA/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ANTIOQUIA/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ANTIOQUIA/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ANTIOQUIA/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ANTIOQUIA/filtrado_marihuana.csv", row.names = FALSE)
+
+
+
+#LIMPIEZA ARAUCA
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ARAUCA")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ARAUCA/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ARAUCA/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ARAUCA/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ARAUCA/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ARAUCA/filtrado_marihuana.csv", row.names = FALSE)
+
+
+
+#LIMPIEZA ATLANTICO
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ATLANTICO")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ATLANTICO/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ATLANTICO/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ATLANTICO/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ATLANTICO/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ATLANTICO/filtrado_marihuana.csv", row.names = FALSE)
+
+
+#LIMPIEZA BOGOTA
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOGOTA")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOGOTA/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOGOTA/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOGOTA/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOGOTA/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOGOTA/filtrado_marihuana.csv", row.names = FALSE)
+
+
+#LIMPIEZA BOLIVAR
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOLIVAR")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOLIVAR/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOLIVAR/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOLIVAR/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOLIVAR/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOLIVAR/filtrado_marihuana.csv", row.names = FALSE)
+
+
+
+#LIMPIEZA BOYACA
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOYACA")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOYACA/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOYACA/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOYACA/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOYACA/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/BOYACA/filtrado_marihuana.csv", row.names = FALSE)
+
+
+
+#LIMPIEZA CALDAS
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CALDAS")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CALDAS/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CALDAS/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CALDAS/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CALDAS/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CALDAS/filtrado_marihuana.csv", row.names = FALSE)
+
+
+#LIMPIEZA CAQUETA
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CAQUETA")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CAQUETA/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CAQUETA/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CAQUETA/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CAQUETA/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CAQUETA/filtrado_marihuana.csv", row.names = FALSE)
+
+
+
+#LIMPIEZA CASANARE
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CASANARE")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CASANARE/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CASANARE/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CASANARE/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CASANARE/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CASANARE/filtrado_marihuana.csv", row.names = FALSE)
+
+
+
+#LIMPIEZA CAUCA
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CAUCA")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CAUCA/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CAUCA/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CAUCA/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CAUCA/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CAUCA/filtrado_marihuana.csv", row.names = FALSE)
+
+
+
+#LIMPIEZA CESAR
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CESAR")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CESAR/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CESAR/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CESAR/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CESAR/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CESAR/filtrado_marihuana.csv", row.names = FALSE)
+
+
+
+#LIMPIEZA CHOCO
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CHOCO")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CHOCO/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CHOCO/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CHOCO/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CHOCO/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CHOCO/filtrado_marihuana.csv", row.names = FALSE)
+
+
+
+
+#LIMPIEZA CORDOBA
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CORDOBA")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CORDOBA/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CORDOBA/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CORDOBA/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CORDOBA/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CORDOBA/filtrado_marihuana.csv", row.names = FALSE)
+
+
+
+#LIMPIEZA CUNDINAMARCA
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CUNDINAMARCA")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CUNDINAMARCA/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CUNDINAMARCA/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CUNDINAMARCA/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CUNDINAMARCA/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/CUNDINAMARCA/filtrado_marihuana.csv", row.names = FALSE)
+
+
+
+#LIMPIEZA GUANIA
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/GUANIA")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/GUANIA/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/GUANIA/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/GUANIA/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/GUANIA/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/GUANIA/filtrado_marihuana.csv", row.names = FALSE)
+
+
+
+#LIMPIEZA GUAVIARE
+setwd("~/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/GUAVIARE")
+
+basuco <- read_csv("datos1_filtrado_basuco.csv")
+cocaina <- read_csv("datos1_filtrado_cocaina.csv")
+extasis <- read_csv("datos1_filtrado_extasis.csv")
+heroina <- read_csv("datos1_filtrado_heroina.csv")
+marihuana <- read_csv("datos1_filtrado_marihuana.csv")
+
+basuco<-basuco[c("DIRECTORIO","M_01", "M_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/GUAVIARE/filtrado_basuco.csv", row.names = FALSE)
+
+cocaina<-cocaina[c("DIRECTORIO", "L_01", "L_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(cocaina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/GUAVIARE/filtrado_cocaina.csv", row.names = FALSE)
+
+extasis<-extasis[c("DIRECTORIO", "N_01", "N_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(extasis, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/GUAVIARE/filtrado_extasis.csv", row.names = FALSE)
+
+heroina<-heroina[c("DIRECTORIO", "O_01", "O_02", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(heroina, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/GUAVIARE/filtrado_heroina.csv", row.names = FALSE)
+
+marihuana<-marihuana[c("DIRECTORIO", "K_02", "K_03", "Depmuni", "ESTRATO", "grupo","D_01","D_02","D_08","D2_01","D2_05", "D2_06","D2_07","SEXO", "EDAD", "PARENTESCO")]
+write.csv(marihuana, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/GUAVIARE/filtrado_marihuana.csv", row.names = FALSE)
+
+
