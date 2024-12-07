@@ -751,7 +751,7 @@ for (valor in valores) {
 pie(
   cuentas,
   labels = etiquetas,
-  main = "Consumo de cocaina en los ultimos 12 meses en Bogota",
+  main = "Consumo de extasis en los ultimos 12 meses en Antioquia",
   col = c("#265409", "#367c1a" ,"#c9ecaf")
 )
 
@@ -899,7 +899,7 @@ for (valor in valores) {
 pie(
   cuentas,
   labels = etiquetas,
-  main = "Consumo de extasis en los ultimos 12 meses en Bogota",
+  main = "Consumo de heroina en los ultimos 12 meses en Bogota",
   col = c("#265409", "#367c1a" ,"#c9ecaf")
 )
 
@@ -923,7 +923,7 @@ barplot(
   cuentas,
   names.arg = etiquetas,
   col = c("#265409", "#367c1a" ,"#c9ecaf"),
-  main = "Consumo de heroina en los ultimos 12 meses en Bogota",
+  main = "Consumo de marihuana en los ultimos 12 meses en Bogota",
   xlab = "Tiempo",
   ylab = "Número de personas",
   ylim = c(0, max(cuentas) + 5)
@@ -950,7 +950,7 @@ for (valor in valores) {
 pie(
   cuentas,
   labels = etiquetas,
-  main = "Consumo de extasis en los ultimos 12 meses en Santander",
+  main = "Consumo de basuco en los ultimos 12 meses en Santander",
   col = c("#265409", "#367c1a" ,"#c9ecaf")
 )
 
@@ -973,7 +973,7 @@ for (valor in valores) {
 pie(
   cuentas,
   labels = etiquetas,
-  main = "Consumo de extasis en los ultimos 12 meses en Santander",
+  main = "Consumo de cocaina en los ultimos 12 meses en Santander",
   col = c("#265409", "#367c1a" ,"#c9ecaf")
 )
 
@@ -1047,7 +1047,7 @@ for (valor in valores) {
 pie(
   cuentas,
   labels = etiquetas,
-  main = "Consumo de extasis en los ultimos 12 meses en Santander",
+  main = "Consumo de marihuana en los ultimos 12 meses en Santander",
   col = c("#265409", "#367c1a" ,"#c9ecaf")
 )
 
@@ -1074,7 +1074,7 @@ for (valor in valores) {
 pie(
   cuentas,
   labels = etiquetas,
-  main = "Consumo de extasis en los ultimos 12 meses en Valle del Cauca",
+  main = "Consumo de basuco en los ultimos 12 meses en Valle del Cauca",
   col = c("#265409", "#367c1a" ,"#c9ecaf")
 )
 
@@ -1144,7 +1144,7 @@ for (valor in valores) {
 pie(
   cuentas,
   labels = etiquetas,
-  main = "Consumo de extasis en los ultimos 12 meses en Valle del Cauca",
+  main = "Consumo de heroina en los ultimos 12 meses en Valle del Cauca",
   col = c("#265409", "#367c1a" ,"#c9ecaf")
 )
 
