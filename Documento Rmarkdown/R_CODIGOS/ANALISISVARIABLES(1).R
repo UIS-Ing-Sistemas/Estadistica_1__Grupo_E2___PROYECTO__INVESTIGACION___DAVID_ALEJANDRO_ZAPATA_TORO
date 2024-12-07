@@ -37,15 +37,6 @@ barplot(
   ylim = c(-2, max(cuentas) + 10)
 )
 
-text(
-  x = seq_along(cuentas),
-  y = cuentas,
-  labels = cuentas,
-  pos = 1,
-  cex = 1,
-  col = "black"
-)
-
 #Consumo por primera vez cocaina 
 columna <- "L_01"
 cuentas <- c()
@@ -124,14 +115,6 @@ barplot(
   ylim = c(-2, max(cuentas) + 10)
 )
 
-text(
-  x = seq_along(cuentas),
-  y = cuentas,
-  labels = cuentas,
-  pos = 1,
-  cex = 1,
-  col = "black"
-)
 
 #Consumo por primera vez marihuana 
 columna <- "K_02"
@@ -188,16 +171,6 @@ barplot(
   ylab = "Número de personas",
   ylim = c(-2, max(cuentas) + 10)
 )
-
-text(
-  x = seq_along(cuentas),
-  y = cuentas,
-  labels = cuentas,
-  pos = 1,
-  cex = 1,
-  col = "black"
-)
-
 
 #Consumo por primera vez Cocaina 
 columna <- "L_01"
@@ -277,14 +250,6 @@ barplot(
   ylim = c(-2, max(cuentas) + 10)
 )
 
-text(
-  x = seq_along(cuentas),
-  y = cuentas,
-  labels = cuentas,
-  pos = 1,
-  cex = 1,
-  col = "black"
-)
 
 #Consumo por primera vez Marihuana 
 columna <- "K_02"
@@ -341,16 +306,6 @@ barplot(
   ylim = c(-2, max(cuentas) + 10)
 )
 
-text(
-  x = seq_along(cuentas),
-  y = cuentas,
-  labels = cuentas,
-  pos = 1,
-  cex = 1,
-  col = "black"
-)
-
-
 #Consumo por primera vez cocaina 
 columna <- "L_01"
 cuentas <- c()
@@ -377,15 +332,6 @@ barplot(
   xlab = "Tiempo",
   ylab = "Número de personas",
   ylim = c(-2, max(cuentas) + 10)
-)
-
-text(
-  x = seq_along(cuentas),
-  y = cuentas,
-  labels = cuentas,
-  pos = 1,
-  cex = 1,
-  col = "black"
 )
 
 
@@ -417,14 +363,6 @@ barplot(
   ylim = c(-2, max(cuentas) + 10)
 )
 
-text(
-  x = seq_along(cuentas),
-  y = cuentas,
-  labels = cuentas,
-  pos = 1,
-  cex = 1,
-  col = "black"
-)
 
 #Consumo por primera vez heroina 
 columna <- "O_01"
@@ -454,14 +392,6 @@ barplot(
   ylim = c(-2, max(cuentas) + 10)
 )
 
-text(
-  x = seq_along(cuentas),
-  y = cuentas,
-  labels = cuentas,
-  pos = 1,
-  cex = 1,
-  col = "black"
-)
 
 #Consumo por primera vez marihuana 
 columna <- "K_02"
@@ -491,14 +421,6 @@ barplot(
   ylim = c(-2, max(cuentas) + 10)
 )
 
-text(
-  x = seq_along(cuentas),
-  y = cuentas,
-  labels = cuentas,
-  pos = 1,
-  cex = 1,
-  col = "black"
-)
 
 #VALLE DEL CAUCA
 
@@ -532,14 +454,6 @@ barplot(
   ylim = c(-2, max(cuentas) + 10)
 )
 
-text(
-  x = seq_along(cuentas),
-  y = cuentas,
-  labels = cuentas,
-  pos = 1,
-  cex = 1,
-  col = "black"
-)
 
 
 #Cocaina 
@@ -595,15 +509,6 @@ barplot(
   ylim = c(-2, max(cuentas) + 10)
 )
 
-text(
-  x = seq_along(cuentas),
-  y = cuentas,
-  labels = cuentas,
-  pos = 1,
-  cex = 1,
-  col = "black"
-)
-
 #Heroina 
 columna <- "O_01"
 cuentas <- c()
@@ -632,14 +537,6 @@ barplot(
   ylim = c(-2, max(cuentas) + 10)
 )
 
-text(
-  x = seq_along(cuentas),
-  y = cuentas,
-  labels = cuentas,
-  pos = 1,
-  cex = 1,
-  col = "black"
-)
 
 #Marihuana 
 columna <- "K_02"
