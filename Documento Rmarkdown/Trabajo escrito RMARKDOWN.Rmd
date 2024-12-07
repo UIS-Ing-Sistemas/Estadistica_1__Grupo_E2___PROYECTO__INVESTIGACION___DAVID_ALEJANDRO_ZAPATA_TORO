@@ -15,23 +15,402 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introducción
 
-El ministerio de Justicia y Derecho de Colombia observo el consumo de sustancias psicoactivas como un problema crítico, no solo por el aumento que se evidencia día a día, sino por las características que lo hacen un asunto complejo en el tema social y de salud pública. \
-Se reconoce que, aunque en algunos casos el dejar el consumo es un proceso sencillo, en otros el consumo de sustancias se vuelve persistente y logra afectar la salud, las relaciones sociales, familiares, laborales y/o académicas; la diferencia entre estos puede radicar en varios aspectos como lo son la sustancia, la persona y su contexto social.\
-En conjunto al ministerio de Justicia, el Departamento Administrativo Nacional de Estadística (DANE) en el año 2019 realizo la Encuesta Nacional de Consumo de Sustancias Psicoactivas en la Población General (ENCSPA-2019) esto con el fin de conocer la situación del país en ese momento, para así, diseñar acciones de política pública, planes, programas y proyectos de forma nacional, departamental y municipal.
-\
-Conociendo esto, se logra plantear la pregunta ¿qué patrones se logran encontrar en los consumidores de sustancias psicoactivas en base a este estudio estadístico?, para la cual se encontrará respuesta a lo largo de este análisis. \
+El ministerio de Justicia y Derecho de Colombia observo el consumo de sustancias psicoactivas como un problema crítico, no solo por el aumento que se evidencia día a día, sino por las características que lo hacen un asunto complejo en el tema social y de salud pública.
 
+Se reconoce que, aunque en algunos casos el dejar el consumo es un proceso sencillo, en otros el consumo de sustancias se vuelve persistente y logra afectar la salud, las relaciones sociales, familiares, laborales y/o académicas; la diferencia entre estos puede radicar en varios aspectos como lo son la sustancia, la persona y su contexto social.
 
-```{r cars}
-summary(cars)
-```
+En conjunto al ministerio de Justicia, el Departamento Administrativo Nacional de Estadística (DANE) en el año 2019 realizo la *Encuesta Nacional de Consumo de Sustancias Psicoactivas en la Población General (ENCSPA-2019)* esto con el fin de conocer la situación del país en ese momento, para así, diseñar acciones de política pública, planes, programas y proyectos de forma nacional, departamental y municipal.
 
-## Including Plots
+Conociendo esto, se logra plantear la pregunta ¿qué patrones se logran encontrar en los consumidores de sustancias psicoactivas en base a este estudio estadístico?, para la cual se encontrará respuesta a lo largo de este análisis. .\
 
-You can also embed plots, for example:
+# Metodología
+
+Mediante la recopilación de los datos que el DANE tiene con acceso público respecto a *Encuesta Nacional de Consumo de Sustancias Psicoactivas en la Población General* se lleva a cabo una investigación documental, donde se recopilo la información necesaria.
+
+En su sitio web se puede acceder de forma separada los datos correspondientes a las personas y las características generales de quienes consumen cada una de las sustancias caracterizadas, los cuales fueron tratados de la siguiente forma:
+
+1.  Recopilación y Elección de Datos
+
+1.1. Descargar los archivos .zip ya que estos almacenaban los .csv que contenidan los datos sin filtro alguno contabamos con mucha información que no tenia ningun tipo de relevancia para la pregunta de investigación planteada.
+
+1.2. Revisión de los items y diccionario de datos de las encuestas realizadas que nos permitieran observar ciertos comportamientos en los datos que además de ellos fueran persistentes en las sustancias y las personas seleccionadas.
+
+1.3. Se eligen como variables de estudio características específicas que se presentan en todas las personas a la que se le realizó la encuesta, y se acotan las sustancias psicoactivas a las cuales se les prestará atención.
+
+2.  Selección, fusión y constraste de datos.
+
+2.1.   Se fija como sustancias a estudiar el bazuco, la cocaína, el éxtasis, la heroína y la marihuana, donde se observa cuando se dio la primera vez y si dentro de los últimos 12 meses la persona había consumido el psicoactivo.
+
+2.2.  Del mismo modo, se seleccionan como ítems necesarios a estudiar en las características de las personas como lo son aporte al hogar, en que ocupan su tiempo, estado de salud, si pertenece a alguna minoría, el nivel educativo máximo alcanzado, su orientación sexual, identidad de género, el sexo de nacimiento y la edad.
+
+2.3.  Se toman los respectivos *.csv* de cada sustancia de donde se extrae la columna “Directorio” la cual contiene una clave por persona, cuya unicidad permite la fusión desde los archivos donde se encuentran las características de las personas que consumen dicha sustancia, al igual que el código de departamento desde la columna “Depmuni”, el cual permite más adelante el clasificado por departamento de los datos fusionados.
+
+3.  Filtrado y Análisis de Datos
+
+3.1.   Una vez se tiene los archivos con la información necesaria, se inicia un proceso de depuración en donde se dejan únicamente los datos con los cuales se va a trabajar, esto tiene el fin de que el manejo de los mismos sea más sencillo en términos computacionales.
+
+Para este se usaron las siguientes dos soluciones de filtrado por departamento:
 
 ```{r pressure, echo=FALSE}
-plot(pressure)
+filtrado_basuco <- merge(basuco_base, amazonas_base, by="DIRECTORIO") write.csv(filtrado_basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/AMAZONAS/filtrado_basuco.csv", row.names = FALSE)
+
+filtrado_basuco<-merge(basuco_base, antiouia_base, by="DIRECTORIO") write.csv(filtrado_basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ANTIOQUIA/filtrado_basuco.csv", row.names = FALSE)
+
+filtrado_basuco<-merge(basuco_base, arauca_base, by="DIRECTORIO") write.csv(filtrado_basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ARAUCA/filtrado_basuco.csv", row.names = FALSE)
+
+filtrado_basuco<-merge(basuco_base, atlantico_base, by="DIRECTORIO") write.csv(filtrado_basuco, "C:/Users/USUARIO/Documents/ESTADISTICA/PROY_FILTER/DEPARTAMENTOS/ATLANTICO/filtrado_basuco.csv", row.names = FALSE)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+y tambien se usó la siguiente forma:
+
+```{r pressure, echo=FALSE}
+consumidores_huila <- consumidores_total_colombia %>%
+
+filter(startsWith(as.character(consumidores_total_colombia$Depmuni), "41"))
+
+write.csv(consumidores_huila, "consumidores_huila.csv", row.names = FALSE)
+
+consumidores_marihuna_huila <- consumdores_marihuana_colombia %\>% filter(startsWith(as.character(consumdores_marihuana_colombia$Depmuni), "41"))
+
+write.csv(consumidores_marihuna_huila, "consumidores_marihuna_huila.csv", row.names = FALSE)
+
+consumidores_basuco_huila <- consumidores_basuco_colombia %\>% filter(startsWith(as.character(consumidores_basuco_colombia$Depmuni), "41"))
+
+write.csv(consumidores_basuco_huila, "consumidores_basuco_huila.csv", row.names = FALSE)
+
+consumidores_cocaina_huila <- consumidores_cocaina_colombia %\>% filter(startsWith(as.character(consumidores_cocaina_colombia$Depmuni), "41"))
+
+write.csv(consumidores_cocaina_huila, "consumidores_cocaina_huila.csv", row.names = FALSE)
+
+consumidores_cocaina_huila <- consumidores_cocaina_colombia %\>% filter(startsWith(as.character(consumidores_cocaina_colombia$Depmuni), "41"))
+write.csv(consumidores_cocaina_huila, "consumidores_cocaina_huila.csv", row.names = FALSE)
+
+consumidores_extasis_huila <- consumidores_extasis_colombia %\>% filter(startsWith(as.character(consumidores_extasis_colombia$Depmuni), "41"))
+
+write.csv(consumidores_extasis_huila, "consumidores_extasis_huila.csv", row.names = FALSE)
+
+consumidores_heroina_huila <- consumidores_heroina_colombia %\>% filter(startsWith(as.character(consumidores_heroina_colombia$Depmuni), "41"))
+
+write.csv(consumidores_heroina_huila, "consumidores_heroina_huila.csv", row.names = FALSE)
+```
+
+3.2.  Como primer ítem se hace el análisis del consumo por departamento de cada una de las sustancias evaluadas, cuyo resultado se verá en el *mapa de calor* con respecto al consumo de sustancias psicoactivas en el país.
+
+![](images/Mapa%20de%20calor.png)
+
+para ello se usó el siguiente codigo:
+
+```{r pressure, echo=FALSE}
+library(sf)
+library(ggplot2)
+library(readr)
+library(dplyr)
+library(viridis)
+
+
+total_amazonas <- nrow(csv_con_valores_completos$datos1_grupo_41.csv)
+total_antioquia <- nrow(csv_con_valores_completos$datos1_grupo_05.csv)
+total_arauca <- nrow(csv_con_valores_completos$datos1_grupo_81.csv)
+total_atlantico <- nrow(csv_con_valores_completos$datos1_grupo_08.csv)
+total_bogota <- nrow(csv_con_valores_completos$datos1_grupo_11.csv)
+total_bolivar <- nrow(csv_con_valores_completos$datos1_grupo_13.csv)
+total_boyaca <- nrow(csv_con_valores_completos$datos1_grupo_15.csv)
+total_caldas <- nrow(csv_con_valores_completos$datos1_grupo_17.csv)
+total_caqueta <- nrow(csv_con_valores_completos$datos1_grupo_18.csv)
+total_casanare <- nrow(csv_con_valores_completos$datos1_grupo_85.csv)
+total_cauca <- nrow(csv_con_valores_completos$datos1_grupo_19.csv)
+total_cesar <- nrow(csv_con_valores_completos$datos1_grupo_20.csv)
+total_choco <- nrow(csv_con_valores_completos$datos1_grupo_27.csv)
+total_cordoba <- nrow(csv_con_valores_completos$datos1_grupo_23.csv)
+total_cundinamarca <- nrow(csv_con_valores_completos$datos1_grupo_25.csv)
+total_guania <- nrow(csv_con_valores_completos$datos1_grupo_94.csv)
+total_guaviare <- nrow(csv_con_valores_completos$datos1_grupo_95.csv)
+total_huila <- nrow(csv_con_valores_completos$consumidores_huila.csv)
+total_guajira <- nrow(csv_con_valores_completos$consumidores_guajira.csv)
+total_magdalena <- nrow(csv_con_valores_completos$consumidores_magdalena.csv)
+total_meta <- nrow(csv_con_valores_completos$consumidores_meta.csv)
+total_nsantander <- nrow(csv_con_valores_completos$consumidores_norte_santander.csv)
+total_nariño <- nrow(csv_con_valores_completos$consumidores_narino.csv)
+total_putumayo <- nrow(csv_con_valores_completos$consumidores_putumayo.csv)
+total_quindio <- nrow(csv_con_valores_completos$consumidores_quindio.csv)
+total_risaralda <- nrow(csv_con_valores_completos$consumidores_risaralda.csv)
+total_santander <- nrow(csv_con_valores_completos$consumidores_santander.csv)
+total_sucre <- nrow(csv_con_valores_completos$consumidores_sucre.csv)
+total_tolima <- nrow(csv_con_valores_completos$consumidores_tolima.csv)
+total_vcauca <- nrow(csv_con_valores_completos$consumidores_valle_del_cauca.csv)
+total_vaupes <- nrow(csv_con_valores_completos$consumidores_vaupes.csv)
+total_vichada <- nrow(csv_con_valores_completos$consumidores_vichada.csv)
+
+orden_departamentos <- data.frame(
+  departamentos = c("VAUPÉS", "ANTIOQUIA", "ATLÁNTICO", "BOGOTÁ, D.C.", "BOLÍVAR", "BOYACÁ", "CALDAS", "CAQUETÁ", "CAUCA", "CESAR", 
+                    "CÓRDOBA", "CUNDINAMARCA", "CHOCÓ", "HUILA", "LA GUAJIRA", "MAGDALENA", "META", "NARIÑO", "NORTE DE SANTANDER", 
+                    "QUINDIO", "RISARALDA", "SANTANDER", "SUCRE", "TOLIMA", "VALLE DEL CAUCA", "ARAUCA", "CASANARE", "PUTUMAYO", 
+                    "GUAINÍA", "GUAVIARE", "VICHADA", "AMAZONAS"),
+  consumo_total = c(total_vaupes, total_antioquia, total_atlantico, total_bogota, total_bolivar,
+                    total_boyaca, total_caldas, total_caqueta, total_cauca, total_cesar, total_cordoba,
+                    total_cundinamarca, total_choco, total_huila, total_guajira, total_magdalena, total_meta,
+                    total_nariño, total_nsantander, total_quindio, total_risaralda,
+                    total_santander, total_sucre, total_tolima, total_vcauca, total_arauca,
+                    total_casanare, total_putumayo, total_guania, total_guaviare, total_vichada, total_amazonas))
+
+mapa_consumo <- mapa_colombia_codigo %>%
+  left_join(orden_departamentos, by = c("DPTO_CNMBR" = "departamentos")) 
+
+ggplot(data = mapa_consumo) +
+  geom_sf(aes(fill = consumo_total)) +
+  scale_fill_viridis(option = "plasma", na.value = "grey") +
+  theme_minimal() +
+  labs(title = "Consumo de Sustancias Psicoactivas en Colombia",
+       fill = "Consumo")
+```
+
+3.3.  Se eligen los 4 departamentos donde se observan los valores de mayor consumo en total de sustancias psicoactivas, los cuales son Antioquia, Santander y Valle del Cauca, adicional a ello la ciudad de Bogotá D.C, en donde se realiza el análisis de cada una de las variables nombradas anteriormente por cada una de las sustancias psicoactivas, cuyos resultados darán pie a la discusión y respuesta de la pregunta de investigación.
+
+## Analisis de consumo basado en Santander
+
+Se realizaron todo los paso anteriores solo para el departamento de sntander filtrando los datos según en que ocupan su tiempo, estado de salud, si pertenece a alguna minoría, el nivel educativo máximo alcanzado, su orientación sexual, identidad de género, el sexo de nacimiento y la edad, separando cada una por la sustancia que consume la persona, antes se realizaron *mapas de calor* del consumo de por cada sustancia en el departamento analizando cada uno de sus municipios:
+
+![](images/Mapa%20de%20consumo%20de%20marihuana%20en%20santander.png)
+
+![](images/Mapa%20consumo%20de%20basuco%20en%20santander.png)
+
+![](images/Mapa%20consumo%20de%20cocaina%20en%20santander.png)
+
+![](images/Mapa%20consumo%20de%20extasis%20en%20satander.png)
+
+![](images/Mapa%20consumo%20de%20heroina%20en%20santander.png)
+
+para dichos mapa se usaron los siguientes codigos
+
+```{r pressure, echo=FALSE}
+library(readr)
+library(dplyr)
+library(sf)
+library(ggplot2)
+library(viridis)
+
+municipios_santander <- c(
+  "Aguada" = "68013",
+  "Albania" = "68020",
+  "Aratoca" = "68051",
+  "Barbosa" = "68077",
+  "Barichara" = "68079",
+  "Barrancabermeja" = "68081",
+  "Betulia" = "68092",
+  "Bolívar" = "68101",
+  "Bucaramanga" = "68001",
+  "Cabrera" = "68121",
+  "California" = "68132",
+  "Capitanejo" = "68147",
+  "Carcasí" = "68152",
+  "Cepitá" = "68160",
+  "Cerrito" = "68162",
+  "Charalá" = "68167",
+  "Charta" = "68169",
+  "Chima" = "68176",
+  "Chipatá" = "68179",
+  "Cimitarra" = "68190",
+  "Concepción" = "68207",
+  "Confines" = "68209",
+  "Contratación" = "68211",
+  "Coromoro" = "68217",
+  "Curití" = "68229",
+  "El Carmen de Chucurí" = "68235",
+  "El Guacamayo" = "68245",
+  "El Peñón" = "68250",
+  "El Playón" = "68255",
+  "Encino" = "68264",
+  "Enciso" = "68266",
+  "Florián" = "68271",
+  "Floridablanca" = "68276",
+  "Galán" = "68296",
+  "Gámbita" = "68298",
+  "Girón" = "68307",
+  "Guaca" = "68318",
+  "Guadalupe" = "68320",
+  "Guapotá" = "68322",
+  "Guavatá" = "68324",
+  "Güepsa" = "68327",
+  "Hato" = "68344",
+  "Jesús María" = "68368",
+  "Jordán" = "68370",
+  "La Belleza" = "68377",
+  "Landázuri" = "68385",
+  "La Paz" = "68397",
+  "Lebrija" = "68406",
+  "Los Santos" = "68418",
+  "Macaravita" = "68425",
+  "Málaga" = "68432",
+  "Matanza" = "68444",
+  "Mogotes" = "68464",
+  "Molagavita" = "68468",
+  "Ocamonte" = "68498",
+  "Oiba" = "68500",
+  "Onzaga" = "68502",
+  "Palmar" = "68522",
+  "Palmas del Socorro" = "68524",
+  "Páramo" = "68533",
+  "Piedecuesta" = "68547",
+  "Pinchote" = "68549",
+  "Puente Nacional" = "68572",
+  "Puerto Parra" = "68573",
+  "Puerto Wilches" = "68575",
+  "Rionegro" = "68615",
+  "Sabana de Torres" = "68655",
+  "San Andrés" = "68669",
+  "San Benito" = "68673",
+  "San Gil" = "68679",
+  "San Joaquín" = "68682",
+  "San José de Miranda" = "68684",
+  "San Miguel" = "68686",
+  "San Vicente de Chucurí" = "68689",
+  "Santa Bárbara" = "68705",
+  "Santa Helena del Opón" = "68720",
+  "Simacota" = "68745",
+  "Socorro" = "68755",
+  "Suaita" = "68770",
+  "Sucre" = "68773",
+  "Suratá" = "68780",
+  "Tona" = "68820",
+  "Valle de San José" = "68855",
+  "Vélez" = "68861",
+  "Vetas" = "68867",
+  "Villanueva" = "68872",
+  "Zapatoca" = "68895"
+)
+
+datos_consumidores <- list()
+
+for (municipio in names(municipios_santander)) {
+  codigo <- municipios_santander[municipio]
+  
+  datos_consumidores[[municipio]] <- csv_con_valores_completos$consumidores_extasis_santander.csv %>%
+    filter(startsWith(as.character(csv_con_valores_completos$consumidores_extasis_santander.csv$Depmuni), codigo))
+}
+
+total_bucaramanga <- nrow(datos_consumidores[["Bucaramanga"]])
+total_aguada <- nrow(datos_consumidores[["Aguada"]])
+total_albania <- nrow(datos_consumidores[["Albania"]])
+total_aratoca <- nrow(datos_consumidores[["Aratoca"]])
+total_barbosa <- nrow(datos_consumidores[["Barbosa"]])
+total_barichara <- nrow(datos_consumidores[["Barichara"]])
+total_barrancabermeja <- nrow(datos_consumidores[["Barrancabermeja"]])
+total_betulia <- nrow(datos_consumidores[["Betulia"]])
+total_bolivar <- nrow(datos_consumidores[["Bolívar"]])
+total_cabrera <- nrow(datos_consumidores[["Cabrera"]])
+total_california <- nrow(datos_consumidores[["California"]])
+total_capitanejo <- nrow(datos_consumidores[["Capitanejo"]])
+total_carcasí <- nrow(datos_consumidores[["Carcasí"]])
+total_cepitá <- nrow(datos_consumidores[["Cepitá"]])
+total_cerrito <- nrow(datos_consumidores[["Cerrito"]])
+total_charalá <- nrow(datos_consumidores[["Charalá"]])
+total_charta <- nrow(datos_consumidores[["Charta"]])
+total_chima <- nrow(datos_consumidores[["Chima"]])
+total_chipatá <- nrow(datos_consumidores[["Chipatá"]])
+total_cimitarra <- nrow(datos_consumidores[["Cimitarra"]])
+total_concepción <- nrow(datos_consumidores[["Concepción"]])
+total_confines <- nrow(datos_consumidores[["Confines"]])
+total_contratación <- nrow(datos_consumidores[["Contratación"]])
+total_coromoro <- nrow(datos_consumidores[["Coromoro"]])
+total_curití <- nrow(datos_consumidores[["Curití"]])
+total_el_carmen_de_chucurí <- nrow(datos_consumidores[["El Carmen de Chucurí"]])
+total_el_guacamayo <- nrow(datos_consumidores[["El Guacamayo"]])
+total_el_peñón <- nrow(datos_consumidores[["El Peñón"]])
+total_el_playón <- nrow(datos_consumidores[["El Playón"]])
+total_encino <- nrow(datos_consumidores[["Encino"]])
+total_enciso <- nrow(datos_consumidores[["Enciso"]])
+total_florián <- nrow(datos_consumidores[["Florián"]])
+total_floridablanca <- nrow(datos_consumidores[["Floridablanca"]])
+total_galán <- nrow(datos_consumidores[["Galán"]])
+total_gámbita <- nrow(datos_consumidores[["Gámbita"]])
+total_girón <- nrow(datos_consumidores[["Girón"]])
+total_guaca <- nrow(datos_consumidores[["Guaca"]])
+total_guadalupe <- nrow(datos_consumidores[["Guadalupe"]])
+total_guapotá <- nrow(datos_consumidores[["Guapotá"]])
+total_guavatá <- nrow(datos_consumidores[["Guavatá"]])
+total_güepsa <- nrow(datos_consumidores[["Güepsa"]])
+total_hato <- nrow(datos_consumidores[["Hato"]])
+total_jesús_maría <- nrow(datos_consumidores[["Jesús María"]])
+total_jordán <- nrow(datos_consumidores[["Jordán"]])
+total_la_belleza <- nrow(datos_consumidores[["La Belleza"]])
+total_landázuri <- nrow(datos_consumidores[["Landázuri"]])
+total_la_paz <- nrow(datos_consumidores[["La Paz"]])
+total_lebrija <- nrow(datos_consumidores[["Lebrija"]])
+total_los_santos <- nrow(datos_consumidores[["Los Santos"]])
+total_macaravita <- nrow(datos_consumidores[["Macaravita"]])
+total_málaga <- nrow(datos_consumidores[["Málaga"]])
+total_matanza <- nrow(datos_consumidores[["Matanza"]])
+total_mogotes <- nrow(datos_consumidores[["Mogotes"]])
+total_molagavita <- nrow(datos_consumidores[["Molagavita"]])
+total_ocamonte <- nrow(datos_consumidores[["Ocamonte"]])
+total_oiba <- nrow(datos_consumidores[["Oiba"]])
+total_onzaga <- nrow(datos_consumidores[["Onzaga"]])
+total_palmar <- nrow(datos_consumidores[["Palmar"]])
+total_palmas_del_socorro <- nrow(datos_consumidores[["Palmas del Socorro"]])
+total_páramo <- nrow(datos_consumidores[["Páramo"]])
+total_piedecuesta <- nrow(datos_consumidores[["Piedecuesta"]])
+total_pinchote <- nrow(datos_consumidores[["Pinchote"]])
+total_puente_nacional <- nrow(datos_consumidores[["Puente Nacional"]])
+total_puerto_parra <- nrow(datos_consumidores[["Puerto Parra"]])
+total_puerto_wilches <- nrow(datos_consumidores[["Puerto Wilches"]])
+total_rionegro <- nrow(datos_consumidores[["Rionegro"]])
+total_sabana_de_torres <- nrow(datos_consumidores[["Sabana de Torres"]])
+total_san_andrés <- nrow(datos_consumidores[["San Andrés"]])
+total_san_benito <- nrow(datos_consumidores[["San Benito"]])
+total_san_gil <- nrow(datos_consumidores[["San Gil"]])
+total_san_joaquín <- nrow(datos_consumidores[["San Joaquín"]])
+total_san_josé_de_miranda <- nrow(datos_consumidores[["San José de Miranda"]])
+total_san_miguel <- nrow(datos_consumidores[["San Miguel"]])
+total_san_vicente_de_chucurí <- nrow(datos_consumidores[["San Vicente de Chucurí"]])
+total_santa_bárbara <- nrow(datos_consumidores[["Santa Bárbara"]])
+total_santa_helena_del_opón <- nrow(datos_consumidores[["Santa Helena del Opón"]])
+total_simacota <- nrow(datos_consumidores[["Simacota"]])
+total_socorro <- nrow(datos_consumidores[["Socorro"]])
+total_suaita <- nrow(datos_consumidores[["Suaita"]])
+total_sucre <- nrow(datos_consumidores[["Sucre"]])
+total_suratá <- nrow(datos_consumidores[["Suratá"]])
+total_tona <- nrow(datos_consumidores[["Tona"]])
+total_valle_de_san_josé <- nrow(datos_consumidores[["Valle de San José"]])
+total_vélez <- nrow(datos_consumidores[["Vélez"]])
+total_vetas <- nrow(datos_consumidores[["Vetas"]])
+total_villanueva <- nrow(datos_consumidores[["Villanueva"]])
+total_zapatoca <- nrow(datos_consumidores[["Zapatoca"]])
+
+
+
+consumo_extasis_por_municipio_santander <- data.frame(
+  municipios = c("ZAPATOCA", "PUERTO WILCHES", "MALAGA", "CARCASI", "LA BELLEZA", "CAPITANEJO", "SANTA HELENA DEL OPON", "LA PAZ", "SUAITA", "MATANZA", 
+                 "LOS SANTOS", "GALAN", "SUCRE", "PUENTE NACIONAL", "GAMBITA", "MAGDALENA", "GUAVATA", "MOLAGAVITA", "ENCISO", "CHIMA", "GUACA", "CHARTA", 
+                 "CALIFORNIA", "SAN ANDRES", "EL PEÑON", "VELEZ", "LANDAZURI", "GUAPOTA", "MACARAVITA", "SAN MIGUEL", "ALBANIA", "CEPITA", "SABANA DE TORRES", 
+                 "GUADALUPE", "PIEDECUESTA", "SAN VICENTE DE CHUCURI", "SANTA BARBARA", "PINCHOTE", "ENCINO", "COROMORO", "PALMAS DEL SOCORRO", "CONFINES", 
+                 "OCAMONTE", "RIONEGRO", "SURATA", "SIMACOTA", "VILLANUEVA", "OIBA", "ONZAGA", "VALLE DE SAN JOSE", "BETULIA", "BARRANCABERMEJA", "JORDAN",
+                 "PARAMO", "CHIPATA", "SAN JOAQUIN", "PALMAR", "SAN JOSE DE MIRANDA", "LEBRIJA", "BUCARAMANGA", "TONA", "MOGOTES", "AGUADA", "FLORIAN", "VETAS",
+                 "EL CARMEN DE CHUCURI", "CIMITARRA", "PUERTO PARRA", "ARATOCA", "SAN BENITO", "JESUS MARIA", "BOLIVAR", "EL GUACAMAYO", "HATO", "SOCORRO", 
+                 "CHARALA", "CONTRATACION", "FLORIDABLANCA", "EL PLAYON", "GIRON", "CONCEPCION", "CERRITO", "GUEPSA", "BARICHARA", "CABRERA", "CURITI", "SAN GIL",
+                 "BARBOSA"),
+  consumo_total = c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0,
+                    0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0))
+
+mapa_santander <- st_read("C:/Users/ASUS/Desktop/Estadistica/Estadistica_1__Grupo_E2___PROYECTO__INVESTIGACION___DAVID_ALEJANDRO_ZAPATA_TORO/DATOS DANE/Datos separados/Mapeo/Mapas/shapes/shapes.shp")
+
+mapa_santander_nombre_municipio <- mapa_santander[,6]
+
+mapa_consumo_extasis_santander <- mapa_santander_nombre_municipio %>%
+  left_join(consumo_extasis_por_municipio_santander, by = c("nombre_mpi" = "municipios")) 
+
+ggplot(data = mapa_consumo_extasis_santander) +
+  geom_sf(aes(fill = consumo_total)) +
+  scale_fill_viridis(option = "plasma", na.value = "grey") +
+  theme_minimal() +
+  labs(title = "Consumo de extasis Santander",
+       fill = "Consumo")
+
+```
+
+el formato anterior se uso para cad uno de los mapas, el anterior solo representa a los consumidores de extasis.
+
+De este mapeo podemos observar que la mayoria de consumidores de sustancias psicoactivas en Santander se encuentran en el area metropolitana que esta conformada por, Floridablanca, Bucaramanga, Piedecuesta y Girón.
+
+## Analisis de variables
+
+las variables que se analizaron para
