@@ -69,3 +69,5 @@ ggplot(data = mapa_consumo) +
   theme_minimal() +
   labs(title = "Consumo de Sustancias Psicoactivas en Colombia",
        fill = "Consumo")
+
+
