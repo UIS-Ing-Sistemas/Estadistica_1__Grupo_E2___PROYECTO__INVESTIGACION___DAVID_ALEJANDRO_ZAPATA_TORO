@@ -15,9 +15,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introducción
 
-Una de las principales problematicas sociales del pais, es el consumo de sustancias psicoactivas en adultos, jovenes e incluso menores de edad.\
+El ministerio de Justicia y Derecho de Colombia observo el consumo de sustancias psicoactivas como un problema crítico, no solo por el aumento que se evidencia día a día, sino por las características que lo hacen un asunto complejo en el tema social y de salud pública. \
+Se reconoce que, aunque en algunos casos el dejar el consumo es un proceso sencillo, en otros el consumo de sustancias se vuelve persistente y logra afectar la salud, las relaciones sociales, familiares, laborales y/o académicas; la diferencia entre estos puede radicar en varios aspectos como lo son la sustancia, la persona y su contexto social.\
+En conjunto al ministerio de Justicia, el Departamento Administrativo Nacional de Estadística (DANE) en el año 2019 realizo la Encuesta Nacional de Consumo de Sustancias Psicoactivas en la Población General (ENCSPA-2019) esto con el fin de conocer la situación del país en ese momento, para así, diseñar acciones de política pública, planes, programas y proyectos de forma nacional, departamental y municipal.
 \
-Colombia es un país que tristemente es conocido mundialmente por los problemas de narcotrafico que se han presentado a lo largo de los años; esta misma situación ha desencadenado violencia y ciertas guerras internas en el país, causando así la muerte de muchas personas inocentes y ajenas a estas situaciones. A pesar de todo, esto no ha impedido que la población deje a un lado este tipo de costumbres y hábitos, esto nos lleva a analizar el consumo de sustancias en el departamento de Santander, buscando responder si es realmente una problemática social.
+Conociendo esto, se logra plantear la pregunta ¿qué patrones se logran encontrar en los consumidores de sustancias psicoactivas en base a este estudio estadístico?, para la cual se encontrará respuesta a lo largo de este análisis. \
+
 
 ```{r cars}
 summary(cars)
