@@ -1,3 +1,5 @@
+library(ggplot2)
+
 total_colombia <- nrow(consumidores_total_colombia)
 total_santander <- nrow(consumidores_santander)
 total_bogota <- nrow(datos1_grupo_11)
@@ -19,3 +21,15 @@ print(bogota)
 ##### PROCENTAJE DE CONSUMO EN VALLE DEL CAUCA #####
 v_cauca <- (total_v_cauca/total_colombia)*100
 print(v_cauca)
+
+
+data <- data.frame(
+  departamento = c("Santander", "Antioquia", "Bogota", "Valle del cauca"),
+  consumo = c(santander, antioquia, bogota, v_cauca)
+)
+
+ggplot(data, aes(x = "", y = consumo, fill = departamento)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y") +
+  labs(title = "Porcentaje de consumo de sustancias en las princpicales capitales del país") +
+  theme_void() 
