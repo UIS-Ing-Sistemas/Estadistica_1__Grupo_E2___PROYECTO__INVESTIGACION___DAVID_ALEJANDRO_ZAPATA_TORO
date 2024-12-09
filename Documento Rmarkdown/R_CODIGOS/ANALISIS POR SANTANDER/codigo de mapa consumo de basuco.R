@@ -4,12 +4,6 @@ library(sf)
 library(ggplot2)
 library(viridis)
 
-setwd("C:/Users/ASUS/Desktop/Estadistica/Estadistica_1__Grupo_E2___PROYECTO__INVESTIGACION___DAVID_ALEJANDRO_ZAPATA_TORO/DATOS DANE/Datos separados/DEPARTAMENTOS/Santander")
-datasets <- list.files(pattern = "*.csv")
-csv_con_valores_completos <- sapply(datasets, read.csv, simplify = FALSE)
-
-##### CONSUMIDORES DE BASUCO #####
-
 consumidores_basuco_bucaramanga <- csv_con_valores_completos$consumidores_basuco_santander.csv %>%
   filter(startsWith(as.character(csv_con_valores_completos$consumidores_basuco_santander.csv$Depmuni), "68001"))
 
