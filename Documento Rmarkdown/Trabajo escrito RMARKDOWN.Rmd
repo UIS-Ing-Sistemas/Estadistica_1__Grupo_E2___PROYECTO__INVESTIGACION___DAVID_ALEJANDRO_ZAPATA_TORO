@@ -7,12 +7,7 @@ output:
   pdf_document: default
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 # Consumo de Sustancias Psicoactivas en Santander
-
 
 # Introducción
 
@@ -48,12 +43,14 @@ En su sitio web se puede acceder de forma separada los datos correspondientes a 
 
 3.  Filtrado y Análisis de Datos
 
-3.1.   Una vez se tiene los archivos con la información necesaria, se inicia un proceso de depuración en donde se dejan únicamente los datos con los cuales se va a trabajar, esto tiene el fin de que el manejo de los mismos sea más sencillo en términos computacionales.Para ello se hizo uso de librerias como read y dplyr. 
+3.1.   Una vez se tiene los archivos con la información necesaria, se inicia un proceso de depuración en donde se dejan únicamente los datos con los cuales se va a trabajar, esto tiene el fin de que el manejo de los mismos sea más sencillo en términos computacionales.Para ello se hizo uso de librerias como read y dplyr.
 
-Para este se usaron dos soluciones de filtrado por departamento, las cuales se pueden encontrar en los archivos _.r_ adicionales, cuya rutina se ve similar a la siguiente:
+Para este se usaron dos soluciones de filtrado por departamento, las cuales se pueden encontrar en los archivos *.r* adicionales, cuya rutina se ve similar a la siguiente:
 
 <details>
+
 <summary>Mostrar/Ocultar Código</summary>
+
 ```{r clasificacion, eval = FALSE, echo = TRUE, collapse=TRUE}
 #load(consumidores_total_colombia)
 library(readr)
@@ -76,9 +73,10 @@ write.csv(consumidores_marihuna_huila, "consumidores_marihuna_huila.csv", row.na
 
 El cual resulta de codigo y herramientas, como se ve a continuación:
 
-
 <details>
+
 <summary>Mostrar/Ocultar Código</summary>
+
 ```{r extraccion de totales y mapeo, eval = FALSE, echo = TRUE, collapse=TRUE}
 library(sf)
 library(ggplot2)
@@ -120,7 +118,9 @@ Luego de realizar todo el proceso anterior con los datos de Santander, filtrando
 para dichos mapa se hizo uso de librerias y código mostrado a continuación (donde se encuentren "..." correponde a datos adicionales que no se muestran pero que son necesarios):
 
 <details>
+
 <summary>Mostrar/Ocultar Código</summary>
+
 ```{r extraccion de datos y mapeo Santander, eval=FALSE,echo = TRUE,  collapse=TRUE}
 library(readr)
 library(dplyr)
@@ -191,10 +191,12 @@ Para nuestro informe se sacaron graficas basandonos en las siguientes variables:
 
 ![](images/marihuana%201%20santander.png)
 
-La rutina para graficación y analisis es la misma para cada sustancia, variando unicamente en el nombre de la columna donde cada sustancia variaba de nombre. 
+La rutina para graficación y analisis es la misma para cada sustancia, variando unicamente en el nombre de la columna donde cada sustancia variaba de nombre.
 
 <details>
+
 <summary>Mostrar/Ocultar Código</summary>
+
 ```{r extraccion consumo primera vez, eval=FALSE, echo = TRUE, collapse=TRUE}
 columna <- "M_01"
 valores<-c("1", "2", "3", "9")
@@ -233,6 +235,8 @@ barplot(
 
 ```
 
+</details>
+
 2.  Consumo y trabajo:
 
 ![](images/Basuco%20oficio%20Santander.png)
@@ -245,8 +249,12 @@ barplot(
 
 ![](images/marihuana%20oficio%20santander.png)
 
+</details>
+
 <details>
+
 <summary>Mostrar/Ocultar Código</summary>
+
 ```{r consumo y trabajo, eval=FALSE, echo = TRUE, collapse=TRUE}
 columna <- "D_02"
 valores<-c("1", "2", "3", "4","5","6","7","8")
@@ -433,7 +441,10 @@ pie(
   main = "Oficio del consumidor de marihuana en Santander",
   col = c("#c9ecaf", "#367c1a", "#58a92e", "#265409","#c9ecaf", "#367c1a", "#58a92e", "#265409")
 )
+
 ```
+
+</details>
 
 3.  Consumo y educación:
 
@@ -450,7 +461,9 @@ pie(
 Para el analisis anterior se siguio la sisguiente rutina:
 
 <details>
+
 <summary>Mostrar/Ocultar Código</summary>
+
 ```{r consumo y educacion, eval=FALSE, echo = TRUE, collapse=TRUE}
 reporte_neducativo<- function(data, columna, valores, etiquetas, nombre_consumo, departamento, titulo_grafico) {
   cuentas <- c()
@@ -544,7 +557,9 @@ reporte_neducativo(
 Para este analisis se siguio la siguiente rutina:
 
 <details>
+
 <summary>Mostrar/Ocultar Código</summary>
+
 ```{r consumo y sexo, eval=FALSE, echo = TRUE, collapse=TRUE}
 
 columna <- "SEXO"
@@ -680,7 +695,9 @@ pie(
 Para las graficas anteriores se siguio la siguiente rutina:
 
 <details>
+
 <summary>Mostrar/Ocultar Código</summary>
+
 ```{r consumo y cultura, eval=FALSE, echo = TRUE, collapse=TRUE}
 reporte_raizal<- function(data, columna, valores, etiquetas, nombre_consumo, departamento, titulo_grafico) {
   cuentas <- c()
@@ -774,7 +791,9 @@ reporte_raizal(
 Para las graficas de la edad se siguió la siguiente rutina:
 
 <details>
+
 <summary>Mostrar/Ocultar Código</summary>
+
 ```{r consumo y edad, eval=FALSE, collapse=TRUE, echo = TRUE, collapse=TRUE}
 analizar_edades <- function(data, columna, nombre_variable = "Variable", intervalos_breaks = NULL) {
   if (!columna %in% names(data)) {
