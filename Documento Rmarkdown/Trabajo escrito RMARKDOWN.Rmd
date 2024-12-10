@@ -10,8 +10,6 @@ header-includes:
   - \usepackage{ragged2e}
   - \justifying
 ---
-
-```{=html}
 <style>
   body {
     font-family: "Times New Roman", serif;
@@ -82,7 +80,6 @@ header-includes:
   background-color: #03CB043;
   
 </style>
-```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -106,7 +103,7 @@ Mediante la recopilación de los datos que el DANE tiene con acceso público res
 
 En su sitio web se puede acceder de forma separada los datos correspondientes a las personas y las características generales de quienes consumen cada una de las sustancias caracterizadas, los cuales fueron tratados de la siguiente forma:
 
-**1. Recopilación y Elección de Datos**
+**1.  Recopilación y Elección de Datos**
 
 1.1. Descargar los archivos .zip ya que estos almacenaban los .csv que contenidan los datos sin filtro alguno contabamos con mucha información que no tenia ningun tipo de relevancia para la pregunta de investigación planteada.
 
@@ -114,7 +111,7 @@ En su sitio web se puede acceder de forma separada los datos correspondientes a 
 
 1.3. Se eligen como variables de estudio características específicas que se presentan en todas las personas a la que se le realizó la encuesta, y se acotan las sustancias psicoactivas a las cuales se les prestará atención.
 
-**2. Selección, fusión y constraste de datos.**
+**2.  Selección, fusión y constraste de datos.**
 
 2.1.   Se fija como sustancias a estudiar el bazuco, la cocaína, el éxtasis, la heroína y la marihuana, donde se observa cuando se dio la primera vez y si dentro de los últimos 12 meses la persona había consumido el psicoactivo.
 
@@ -122,19 +119,16 @@ En su sitio web se puede acceder de forma separada los datos correspondientes a 
 
 2.3.  Se toman los respectivos *.csv* de cada sustancia de donde se extrae la columna “Directorio” la cual contiene una clave por persona, cuya unicidad permite la fusión desde los archivos donde se encuentran las características de las personas que consumen dicha sustancia, al igual que el código de departamento desde la columna “Depmuni”, el cual permite más adelante el clasificado por departamento de los datos fusionados.
 
-**3. Filtrado y Análisis de Datos**
+**3.  Filtrado y Análisis de Datos**
 
 3.1.   Una vez se tiene los archivos con la información necesaria, se inicia un proceso de depuración en donde se dejan únicamente los datos con los cuales se va a trabajar, esto tiene el fin de que el manejo de los mismos sea más sencillo en términos computacionales.Para ello se hizo uso de librerias como read y dplyr.
 
 Para este se usaron dos soluciones de filtrado por departamento, las cuales se pueden encontrar en los archivos *.r* adicionales, cuya rutina se ve similar a la que se despliega en el siguiente botón:
 
-<button onclick="toggleVisibility(&#39;section1&#39;)" class="custom-button">
+<button onclick="toggleVisibility('section1')" class="custom-button">Mostrar/Ocultar Código</button>
 
-Mostrar/Ocultar Código
+<div id="section1" style="display:none;">
 
-</button>
-
-::: {#section1 style="display:none;"}
 ```{r clasificacion, eval = FALSE, echo = TRUE, collapse=TRUE}
 #load(consumidores_total_colombia)
 library(readr)
@@ -150,11 +144,8 @@ consumidores_marihuna_huila <- consumdores_marihuana_colombia %>% filter(startsW
 write.csv(consumidores_marihuna_huila, "consumidores_marihuna_huila.csv", row.names = FALSE)
 
 ```
-:::
 
-```{=html}
-<script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
-```
+</div> <script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
 
 \
 3.2.  Como primer ítem se hace el análisis del consumo por departamento de cada una de las sustancias evaluadas, cuyo resultado se verá en el *mapa de calor* con respecto al consumo de sustancias psicoactivas en el país.
@@ -163,13 +154,10 @@ write.csv(consumidores_marihuna_huila, "consumidores_marihuna_huila.csv", row.na
 
 El cual resulta de codigo y herramientas, que se visualizan al dar click en:
 
-<button onclick="toggleVisibility(&#39;section2&#39;)" class="custom-button">
+<button onclick="toggleVisibility('section2')" class="custom-button">Mostrar/Ocultar Código</button>
 
-Mostrar/Ocultar Código
+<div id="section2" style="display:none;">
 
-</button>
-
-::: {#section2 style="display:none;"}
 ```{r extraccion de totales y mapeo, eval = FALSE, echo = TRUE, collapse=TRUE}
 library(sf)
 library(ggplot2)
@@ -191,11 +179,8 @@ ggplot(data = mapa_consumo) +
   labs(title = "Consumo de Sustancias Psicoactivas en Colombia",
        fill = "Consumo")
 ```
-:::
 
-```{=html}
-<script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
-```
+</div> <script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
 
 \
 3.3.  Se eligen los 4 departamentos donde se observan los valores de mayor consumo en total de sustancias psicoactivas, los cuales son Antioquia, Santander y Valle del Cauca, adicional a ello la ciudad de Bogotá D.C, en donde se realiza el análisis de cada una de las variables nombradas anteriormente por cada una de las sustancias psicoactivas, cuyos resultados darán pie a la discusión y respuesta de la pregunta de investigación.
@@ -212,16 +197,14 @@ Luego de realizar todo el proceso anterior con los datos de Santander, filtrando
 
 ![](images/Mapa%20consumo%20de%20extasis%20en%20satander.png)
 
-![](images/Mapa%20consumo%20de%20heroina%20en%20santander.png)\
+![](images/Mapa%20consumo%20de%20heroina%20en%20santander.png)
+\
 Para dichos mapa se hizo uso de librerias y código mostrado dando clic a continuación (donde se encuentren "..." correponde a datos adicionales que no se muestran pero que son necesarios):
 
-<button onclick="toggleVisibility(&#39;section3&#39;)" class="custom-button">
+<button onclick="toggleVisibility('section3')" class="custom-button">Mostrar/Ocultar Código</button>
 
-Mostrar/Ocultar Código
+<div id="section3" style="display:none;">
 
-</button>
-
-::: {#section3 style="display:none;"}
 ```{r extraccion de datos y mapeo Santander, eval=FALSE,echo = TRUE,  collapse=TRUE}
 library(readr)
 library(dplyr)
@@ -271,12 +254,8 @@ ggplot(data = mapa_consumo_extasis_santander) +
        fill = "Consumo")
 
 ```
-:::
 
-```{=html}
-<script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
-```
-
+</div> <script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
 \
 
 El formato anterior se uso para cada uno de los mapas generados por sustancia psicoactiva a estudiar.
@@ -287,7 +266,7 @@ De este mapeo podemos observar que la mayoria de consumidores de sustancias psic
 
 Para nuestro informe se sacaron gráficas basandonos en las siguientes variables:
 
-**1. Consumo de sustancias por primera vez**
+**1.  Consumo de sustancias por primera vez**
 
 ![](images/basuco%201%20santander.png)
 
@@ -301,13 +280,10 @@ Para nuestro informe se sacaron gráficas basandonos en las siguientes variables
 
 La rutina para gráfica y análisis es la misma para cada sustancia, variando unicamente en el nombre de la columna donde cada sustancia variaba de nombre (si se quiere observar, en el botón continuo a las graficas se posibilita).
 
-<button onclick="toggleVisibility(&#39;section4&#39;)" class="custom-button">
+<button onclick="toggleVisibility('section4')" class="custom-button">Mostrar/Ocultar Código</button>
 
-Mostrar/Ocultar Código
+<div id="section4" style="display:none;">
 
-</button>
-
-::: {#section4 style="display:none;"}
 ```{r extraccion consumo primera vez, eval=FALSE, echo = TRUE, collapse=TRUE}
 columna <- "M_01"
 valores<-c("1", "2", "3", "9")
@@ -345,15 +321,10 @@ barplot(
 )
 
 ```
-:::
-
-```{=html}
-<script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
-```
-
+</div> <script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
 \
 
-**2. Consumo y trabajo:**
+**2.  Consumo y trabajo:**
 
 ![](images/Basuco%20oficio%20Santander.png)
 
@@ -365,13 +336,11 @@ barplot(
 
 ![](images/marihuana%20oficio%20santander.png)
 
-<button onclick="toggleVisibility(&#39;section5&#39;)" class="custom-button">
 
-Mostrar/Ocultar Código
+<button onclick="toggleVisibility('section5')" class="custom-button">Mostrar/Ocultar Código</button>
 
-</button>
+<div id="section5" style="display:none;">
 
-::: {#section5 style="display:none;"}
 ```{r consumo y trabajo, eval=FALSE, echo = TRUE, collapse=TRUE}
 columna <- "D_02"
 valores<-c("1", "2", "3", "4","5","6","7","8")
@@ -560,15 +529,11 @@ pie(
 )
 
 ```
-:::
 
-```{=html}
-<script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
-```
-
+</div> <script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
 \
 
-**3. Consumo y educación:**
+**3.  Consumo y educación:**
 
 ![](images/basuco%20educacion%20santander.png)
 
@@ -582,13 +547,10 @@ pie(
 
 Para el análisis anterior se siguio la sisguiente rutina:
 
-<button onclick="toggleVisibility(&#39;section6&#39;)" class="custom-button">
+<button onclick="toggleVisibility('section6')" class="custom-button">Mostrar/Ocultar Código</button>
 
-Mostrar/Ocultar Código
+<div id="section6" style="display:none;">
 
-</button>
-
-::: {#section6 style="display:none;"}
 ```{r consumo y educacion, eval=FALSE, echo = TRUE, collapse=TRUE}
 reporte_neducativo<- function(data, columna, valores, etiquetas, nombre_consumo, departamento, titulo_grafico) {
   cuentas <- c()
@@ -666,15 +628,11 @@ reporte_neducativo(
   titulo_grafico = "Nivel educativo del consumidor de marihuana"
 )
 ```
-:::
 
-```{=html}
-<script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
-```
-
+</div> <script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
 \
 
-**4. Consumo y por género:**
+**4.  Consumo y por género:**
 
 ![](images/basuco%20S%20santander.png)
 
@@ -688,13 +646,10 @@ reporte_neducativo(
 
 Para este análisis se siguio la siguiente rutina:
 
-<button onclick="toggleVisibility(&#39;section7&#39;)" class="custom-button">
+<button onclick="toggleVisibility('section7')" class="custom-button">Mostrar/Ocultar Código</button>
 
-Mostrar/Ocultar Código
+<div id="section7" style="display:none;">
 
-</button>
-
-::: {#section7 style="display:none;"}
 ```{r consumo y sexo, eval=FALSE, echo = TRUE, collapse=TRUE}
 
 columna <- "SEXO"
@@ -814,15 +769,11 @@ pie(
   col = c("#265409", "#367c1a")
 )
 ```
-:::
 
-```{=html}
-<script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
-```
-
+</div> <script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
 \
 
-**5. Consumo y raices culturales:**
+**5.  Consumo y raices culturales:**
 
 ![](images/basuco%20cultura%20santander.png)
 
@@ -836,13 +787,10 @@ pie(
 
 Para las graficas anteriores se siguio la rutina ue se depliega en el siguiente botón:
 
-<button onclick="toggleVisibility(&#39;section8&#39;)" class="custom-button">
+<button onclick="toggleVisibility('section8')" class="custom-button">Mostrar/Ocultar Código</button>
 
-Mostrar/Ocultar Código
+<div id="section8" style="display:none;">
 
-</button>
-
-::: {#section8 style="display:none;"}
 ```{r consumo y cultura, eval=FALSE, echo = TRUE, collapse=TRUE}
 reporte_raizal<- function(data, columna, valores, etiquetas, nombre_consumo, departamento, titulo_grafico) {
   cuentas <- c()
@@ -920,14 +868,11 @@ reporte_raizal(
   titulo_grafico = "Pertenencia a culturas raizales y palenqueras del consumidor de marihuana"
 )
 ```
-:::
 
-```{=html}
-<script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
-```
+</div> <script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
 
 \
-**6. Consumo y edad:**
+**6.  Consumo y edad:**
 
 ![](images/basuco%20edad%20santander.png)
 
@@ -941,13 +886,10 @@ reporte_raizal(
 
 Para las gráficas de la edad se siguió la rutina deplegable en el botón:
 
-<button onclick="toggleVisibility(&#39;section9&#39;) " class="custom-button">
+<button onclick="toggleVisibility('section9') "class="custom-button">Mostrar/Ocultar Código</button>
 
-Mostrar/Ocultar Código
+<div id="section9" style="display:none;">
 
-</button>
-
-::: {#section9 style="display:none;"}
 ```{r consumo y edad, eval=FALSE, collapse=TRUE, echo = TRUE, collapse=TRUE}
 analizar_edades <- function(data, columna, nombre_variable = "Variable", intervalos_breaks = NULL) {
   if (!columna %in% names(data)) {
@@ -1061,12 +1003,8 @@ resultados <- analizar_edades(
   nombre_variable = "Edades consumo marihuana Santander "  
 )
 ```
-:::
 
-```{=html}
-<script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
-```
-
+</div> <script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
 \
 
 ## Discusión
@@ -1084,46 +1022,53 @@ El consumo de marihuana destaca por su prevalencia en comparación con otras sus
 
 ## Conclusiones
 
-**I.** Antioquia presenta una alta prevalencia en el consumo de sustancias psicoactivas.\
+**I.**	Antioquia presenta una alta prevalencia en el consumo de sustancias psicoactivas.\
 
-**II.** El área metropolitana de Bucaramanga (incluyendo Floridablanca y Girón) concentra los índices más altos de consumo de sustancias psicoactivas en Santander.\
+**II.**	El área metropolitana de Bucaramanga (incluyendo Floridablanca y Girón) concentra los índices más altos de consumo de sustancias psicoactivas en Santander.\
 
-**III.** El inicio del consumo de sustancias psicoactivas en Santander suele ocurrir más de un año antes de la realización de la encuesta.\
+**III.**	El inicio del consumo de sustancias psicoactivas en Santander suele ocurrir más de un año antes de la realización de la encuesta.\
 
-**IV.** La mayoría de los encuestados reportaron no haber consumido sustancias psicoactivas en el último año.\
+**IV.**	La mayoría de los encuestados reportaron no haber consumido sustancias psicoactivas en el último año.\
 
-**V.** El nivel educativo de los consumidores se concentra principalmente en la educación secundaria-media, con menor representación de niveles técnicos y profesionales.\
+**V.**	El nivel educativo de los consumidores se concentra principalmente en la educación secundaria-media, con menor representación de niveles técnicos y profesionales.\
 
-**VI.** Los consumidores suelen contribuir económicamente al hogar, excepto en el caso del éxtasis.\
+**VI.**	Los consumidores suelen contribuir económicamente al hogar, excepto en el caso del éxtasis.\
 
-**VII.** La mayoría de los consumidores se encuentran activos laboralmente, en ningún caso se observa incapacidad o pensión.\
+**VII.**	La mayoría de los consumidores se encuentran activos laboralmente, en ningún caso se observa incapacidad o pensión.\
 
-**VIII.** El consumo entre grupos minoritarios como indígenas, gitanos y afrodescendientes es bajo, y nulo en casos de palenqueros y raizales isleños.\
+**VIII.**	El consumo entre grupos minoritarios como indígenas, gitanos y afrodescendientes es bajo, y nulo en casos de palenqueros y raizales isleños.\
 
-**IX.** Los consumidores de bazuco y marihuana suelen reportar un peor estado de salud en comparación con otros grupos, donde no se reportan deficiencias en esta.\
+**IX.**	Los consumidores de bazuco y marihuana suelen reportar un peor estado de salud en comparación con otros grupos, donde no se reportan deficiencias en esta.\
 
-**X.** En todos los casos el consumidor solo se reconoce dos identidades de género, femenino y masculino.\
+**X.**	En todos los casos el consumidor solo se reconoce dos identidades de género, femenino y masculino.\
 
-**XI.** La orientación sexual predominante entre los consumidores es la heterosexual, la homosexualidad y la bisexualidad son menos frecuentes entre los consumidores, y otras no son reconocidas.\
+**XI.**	La orientación sexual predominante entre los consumidores es la heterosexual, la homosexualidad y la bisexualidad son menos frecuentes entre los consumidores, y otras no son reconocidas.\
 
-**XII.** El consumo de sustancias psicoactivas es predominantemente masculino, con algunas excepciones.\
+**XII.**	El consumo de sustancias psicoactivas es predominantemente masculino, con algunas excepciones.\
 
 \
 
 ## Referencias
 
-**Ministerio de Justicia y del Derecho.** (s/f). Gov.co. Recuperado el 10 de diciembre de 2024, de <https://www.minjusticia.gov.co/programas-co/ODC/Paginas/Situaci%C3%B3n-consumo.aspx>\
+  **Ministerio de Justicia y del Derecho.** (s/f). Gov.co. Recuperado el 10 de diciembre de 2024, de https://www.minjusticia.gov.co/programas-co/ODC/Paginas/Situaci%C3%B3n-consumo.aspx 
+\
 \
 
-**Encuesta Nacional de Consumo de Sustancias Psicoactivas en Población General - ENCSPA- 2019** - Colombia. (2020). [Data set].\
+  **Encuesta Nacional de Consumo de Sustancias Psicoactivas en Población General - ENCSPA- 2019** - Colombia. (2020). [Data set].
+\
 \
 
-ChatGPT. (s/f). Chatgpt.com. Recuperado el 10 de diciembre de 2024, de <https://chatgpt.com/>\
+  ChatGPT. (s/f). Chatgpt.com. Recuperado el 10 de diciembre de 2024, de https://chatgpt.com/ 
+\
 \
 
-Códigos de Colores HTML. (2015, septiembre 3). HTML Color Codes. <https://htmlcolorcodes.com/es/>\
+  Códigos de Colores HTML. (2015, septiembre 3). HTML Color Codes. https://htmlcolorcodes.com/es/ 
 \
-Cohen, A. (2024, agosto 16). Metodología de un proyecto: ejemplo, cómo hacerla y qué incluye. Hubspot.es. <https://blog.hubspot.es/marketing/metodologia-proyecto>\
 \
-Gemini - chat to supercharge your ideas. (s/f). Gemini. Recuperado el 10 de diciembre de 2024, de <https://gemini.google.com/app>\
+  Cohen, A. (2024, agosto 16). Metodología de un proyecto: ejemplo, cómo hacerla y qué incluye. Hubspot.es. https://blog.hubspot.es/marketing/metodologia-proyecto 
 \
+\
+  Gemini - chat to supercharge your ideas. (s/f). Gemini. Recuperado el 10 de diciembre de 2024, de https://gemini.google.com/app 
+\
+\
+
