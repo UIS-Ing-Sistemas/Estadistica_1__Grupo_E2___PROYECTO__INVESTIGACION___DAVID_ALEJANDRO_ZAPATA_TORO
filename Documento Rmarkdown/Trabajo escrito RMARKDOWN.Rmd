@@ -1,5 +1,5 @@
 ---
-title: "EDA Project__Estadistica_1"
+title: "Analisis Exploratorio de Datos - Proyecto Final Estadistica I "
 author: "David Zapata - Marian Becerra"
 date: "`r Sys.Date()`"
 output:
@@ -248,8 +248,6 @@ barplot(
 ![](images/heroina%20oficio%20santander.png)
 
 ![](images/marihuana%20oficio%20santander.png)
-
-</details>
 
 <details>
 
@@ -542,6 +540,8 @@ reporte_neducativo(
 )
 ```
 
+</details>
+
 4.  Consumo y por genero:
 
 ![](images/basuco%20S%20santander.png)
@@ -680,6 +680,8 @@ pie(
 )
 ```
 
+</details>
+
 5.  Consumo y raices culturales:
 
 ![](images/basuco%20cultura%20santander.png)
@@ -775,6 +777,8 @@ reporte_raizal(
   titulo_grafico = "Pertenencia a culturas raizales y palenqueras del consumidor de marihuana"
 )
 ```
+
+</details>
 
 5.  Consumo y edad:
 
@@ -907,3 +911,5 @@ resultados <- analizar_edades(
   nombre_variable = "Edades consumo marihuana Santander "  
 )
 ```
+
+</details>
