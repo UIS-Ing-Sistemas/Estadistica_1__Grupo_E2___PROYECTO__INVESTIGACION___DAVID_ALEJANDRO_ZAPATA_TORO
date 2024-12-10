@@ -1,5 +1,5 @@
 ---
-title: "ENCSPA-2019 Project Estadistica 1"
+title: "Analisis Exploratorio de Datos ENCSPA-2019- Proyecto Final Estadistica I "
 author: "David Zapata - Marian Becerra"
 date: "`r Sys.Date()`"
 output:
@@ -10,7 +10,6 @@ header-includes:
   - \usepackage{ragged2e}
   - \justifying
 ---
-
 <style>
   body {
     font-family: "Times New Roman", serif;
@@ -528,11 +527,12 @@ pie(
   main = "Oficio del consumidor de marihuana en Santander",
   col = c("#c9ecaf", "#367c1a", "#58a92e", "#265409","#c9ecaf", "#367c1a", "#58a92e", "#265409")
 )
+
 ```
 
 </div> <script> function toggleVisibility(id) { var element = document.getElementById(id); if (element.style.display === "none") { element.style.display = "block"; } else { element.style.display = "none"; } } </script>
-
 \
+
 **3.  Consumo y educación:**
 
 ![](images/basuco%20educacion%20santander.png)
