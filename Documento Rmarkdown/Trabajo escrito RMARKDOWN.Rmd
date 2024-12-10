@@ -3,9 +3,9 @@ title: "Analisis Exploratorio de Datos ENCSPA-2019- Proyecto Final Estadistica I
 author: "David Zapata - Marian Becerra"
 date: "`r Sys.Date()`"
 output:
-  html_document: default
   pdf_document:
     latex_engine: xelatex
+  html_document: default
 header-includes:
   - \usepackage{ragged2e}
   - \justifying

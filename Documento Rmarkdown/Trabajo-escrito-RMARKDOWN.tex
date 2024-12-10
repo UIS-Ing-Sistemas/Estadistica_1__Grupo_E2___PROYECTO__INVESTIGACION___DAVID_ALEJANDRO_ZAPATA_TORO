@@ -94,6 +94,8 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{ragged2e}
+\justifying
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -101,12 +103,13 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Analisis Exploratorio de Datos - Proyecto Final Estadistica I},
+  pdftitle={Analisis Exploratorio de Datos ENCSPA-2019- Proyecto Final Estadistica I},
   pdfauthor={David Zapata - Marian Becerra},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{Analisis Exploratorio de Datos - Proyecto Final Estadistica I}
+\title{Analisis Exploratorio de Datos ENCSPA-2019- Proyecto Final
+Estadistica I}
 \author{David Zapata - Marian Becerra}
 \date{2024-12-10}
 
@@ -116,7 +119,7 @@
 \section{Consumo de Sustancias Psicoactivas en
 Santander}\label{consumo-de-sustancias-psicoactivas-en-santander}
 
-\section{Introducción}\label{introducciuxf3n}
+\subsection{Introducción}\label{introducciuxf3n}
 
 El ministerio de Justicia y Derecho de Colombia observo el consumo de
 sustancias psicoactivas como un problema crítico, no solo por el aumento
@@ -137,12 +140,11 @@ Nacional de Consumo de Sustancias Psicoactivas en la Población General
 momento, para así, diseñar acciones de política pública, planes,
 programas y proyectos de forma nacional, departamental y municipal.
 
-Conociendo esto, se logra plantear la pregunta ¿qué patrones se logran
-encontrar en los consumidores de sustancias psicoactivas en base a este
-estudio estadístico?, para la cual se encontrará respuesta a lo largo de
-este análisis. .\\
+Conociendo esto, se logra plantear la pregunta ¿qué características
+predominan en los consumidores de sustancias psicoactivas en Santander?,
+para la cual se encontrará respuesta a lo largo de este análisis. .\\
 
-\section{Metodología}\label{metodologuxeda}
+\subsection{Metodología}\label{metodologuxeda}
 
 Mediante la recopilación de los datos que el DANE tiene con acceso
 público respecto a \emph{Encuesta Nacional de Consumo de Sustancias
@@ -154,12 +156,7 @@ correspondientes a las personas y las características generales de
 quienes consumen cada una de las sustancias caracterizadas, los cuales
 fueron tratados de la siguiente forma:
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Recopilación y Elección de Datos
-\end{enumerate}
+\textbf{1. Recopilación y Elección de Datos}
 
 1.1. Descargar los archivos .zip ya que estos almacenaban los .csv que
 contenidan los datos sin filtro alguno contabamos con mucha información
@@ -176,13 +173,7 @@ se presentan en todas las personas a la que se le realizó la encuesta, y
 se acotan las sustancias psicoactivas a las cuales se les prestará
 atención.
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  Selección, fusión y constraste de datos.
-\end{enumerate}
+\textbf{2. Selección, fusión y constraste de datos.}
 
 2.1.~~ Se fija como sustancias a estudiar el bazuco, la cocaína, el
 éxtasis, la heroína y la marihuana, donde se observa cuando se dio la
@@ -203,13 +194,7 @@ igual que el código de departamento desde la columna ``Depmuni'', el
 cual permite más adelante el clasificado por departamento de los datos
 fusionados.
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  Filtrado y Análisis de Datos
-\end{enumerate}
+\textbf{3. Filtrado y Análisis de Datos}
 
 3.1.~~ Una vez se tiene los archivos con la información necesaria, se
 inicia un proceso de depuración en donde se dejan únicamente los datos
@@ -219,10 +204,11 @@ hizo uso de librerias como read y dplyr.
 
 Para este se usaron dos soluciones de filtrado por departamento, las
 cuales se pueden encontrar en los archivos \emph{.r} adicionales, cuya
-rutina se ve similar a la siguiente:
+rutina se ve similar a la que se despliega en el siguiente botón:
 
 Mostrar/Ocultar Código
 
+\phantomsection\label{section1}
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\#load(consumidores\_total\_colombia)}
@@ -240,6 +226,7 @@ Mostrar/Ocultar Código
 \end{Highlighting}
 \end{Shaded}
 
+\hfill\break
 3.2.~ Como primer ítem se hace el análisis del consumo por departamento
 de cada una de las sustancias evaluadas, cuyo resultado se verá en el
 \emph{mapa de calor} con respecto al consumo de sustancias psicoactivas
@@ -247,10 +234,12 @@ en el país.
 
 \includegraphics{images/Mapa de calor.png}
 
-El cual resulta de codigo y herramientas, como se ve a continuación:
+El cual resulta de codigo y herramientas, que se visualizan al dar click
+en:
 
 Mostrar/Ocultar Código
 
+\phantomsection\label{section2}
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(sf)}
@@ -275,6 +264,7 @@ Mostrar/Ocultar Código
 \end{Highlighting}
 \end{Shaded}
 
+\hfill\break
 3.3.~ Se eligen los 4 departamentos donde se observan los valores de
 mayor consumo en total de sustancias psicoactivas, los cuales son
 Antioquia, Santander y Valle del Cauca, adicional a ello la ciudad de
@@ -283,14 +273,14 @@ nombradas anteriormente por cada una de las sustancias psicoactivas,
 cuyos resultados darán pie a la discusión y respuesta de la pregunta de
 investigación.
 
-\section{Analisis de consumo basado en
-Santander}\label{analisis-de-consumo-basado-en-santander}
+\subsection{Análisis de consumo basado en
+Santander}\label{anuxe1lisis-de-consumo-basado-en-santander}
 
 Luego de realizar todo el proceso anterior con los datos de Santander,
 filtrando los datos según la ocupación, el estado de salud, si pertenece
 a alguna minoría, el nivel educativo máximo alcanzado, su orientación
 sexual, identidad de género, el sexo de nacimiento y la edad, separando
-cada una por la sustancia que consume la persona, antes se realizaron
+cada una por la sustancia que consume la persona, antes se realizan los
 \emph{mapas de calor} del consumo de por cada sustancia en el
 departamento analizando cada uno de sus municipios:
 
@@ -302,14 +292,14 @@ departamento analizando cada uno de sus municipios:
 
 \includegraphics{images/Mapa consumo de extasis en satander.png}
 
-\includegraphics{images/Mapa consumo de heroina en santander.png}
-
-para dichos mapa se hizo uso de librerias y código mostrado a
+\includegraphics{images/Mapa consumo de heroina en santander.png}\\
+Para dichos mapa se hizo uso de librerias y código mostrado dando clic a
 continuación (donde se encuentren ``\ldots{}'' correponde a datos
 adicionales que no se muestran pero que son necesarios):
 
 Mostrar/Ocultar Código
 
+\phantomsection\label{section3}
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(readr)}
@@ -361,6 +351,8 @@ Mostrar/Ocultar Código
 \end{Highlighting}
 \end{Shaded}
 
+\hfill\break
+
 El formato anterior se uso para cada uno de los mapas generados por
 sustancia psicoactiva a estudiar.
 
@@ -369,17 +361,12 @@ sustancias psicoactivas en Santander se encuentran en el area
 metropolitana que esta conformada por, Floridablanca, Bucaramanga,
 Piedecuesta y Girón.
 
-\section{Analisis de variables}\label{analisis-de-variables}
+\subsection{Análisis de variables}\label{anuxe1lisis-de-variables}
 
-Para nuestro informe se sacaron graficas basandonos en las siguientes
+Para nuestro informe se sacaron gráficas basandonos en las siguientes
 variables:
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Consumo de sustancias por primera vez
-\end{enumerate}
+\textbf{1. Consumo de sustancias por primera vez}
 
 \includegraphics{images/basuco 1 santander.png}
 
@@ -391,12 +378,14 @@ variables:
 
 \includegraphics{images/marihuana 1 santander.png}
 
-La rutina para graficación y analisis es la misma para cada sustancia,
+La rutina para gráfica y análisis es la misma para cada sustancia,
 variando unicamente en el nombre de la columna donde cada sustancia
-variaba de nombre.
+variaba de nombre (si se quiere observar, en el botón continuo a las
+graficas se posibilita).
 
 Mostrar/Ocultar Código
 
+\phantomsection\label{section4}
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{columna }\OtherTok{\textless{}{-}} \StringTok{"M\_01"}
@@ -436,13 +425,9 @@ Mostrar/Ocultar Código
 \end{Highlighting}
 \end{Shaded}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  Consumo y trabajo:
-\end{enumerate}
+\hfill\break
+
+\textbf{2. Consumo y trabajo:}
 
 \includegraphics{images/Basuco oficio Santander.png}
 
@@ -456,6 +441,7 @@ Mostrar/Ocultar Código
 
 Mostrar/Ocultar Código
 
+\phantomsection\label{section5}
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{columna }\OtherTok{\textless{}{-}} \StringTok{"D\_02"}
@@ -646,13 +632,9 @@ Mostrar/Ocultar Código
 \end{Highlighting}
 \end{Shaded}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  Consumo y educación:
-\end{enumerate}
+\hfill\break
+
+\textbf{3. Consumo y educación:}
 
 \includegraphics{images/basuco educacion santander.png}
 
@@ -664,10 +646,11 @@ Mostrar/Ocultar Código
 
 \includegraphics{images/marihuana eduacion santander.png}
 
-Para el analisis anterior se siguio la sisguiente rutina:
+Para el análisis anterior se siguio la sisguiente rutina:
 
 Mostrar/Ocultar Código
 
+\phantomsection\label{section6}
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{reporte\_neducativo}\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(data, columna, valores, etiquetas, nombre\_consumo, departamento, titulo\_grafico) \{}
@@ -748,13 +731,9 @@ Mostrar/Ocultar Código
 \end{Highlighting}
 \end{Shaded}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
-\item
-  Consumo y por genero:
-\end{enumerate}
+\hfill\break
+
+\textbf{4. Consumo y por género:}
 
 \includegraphics{images/basuco S santander.png}
 
@@ -766,10 +745,11 @@ Mostrar/Ocultar Código
 
 \includegraphics{images/marihuana S santander.png}
 
-Para este analisis se siguio la siguiente rutina:
+Para este análisis se siguio la siguiente rutina:
 
 Mostrar/Ocultar Código
 
+\phantomsection\label{section7}
 \begin{Shaded}
 \begin{Highlighting}[]
 
@@ -892,13 +872,9 @@ Mostrar/Ocultar Código
 \end{Highlighting}
 \end{Shaded}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
-\tightlist
-\item
-  Consumo y raices culturales:
-\end{enumerate}
+\hfill\break
+
+\textbf{5. Consumo y raices culturales:}
 
 \includegraphics{images/basuco cultura santander.png}
 
@@ -910,10 +886,12 @@ Mostrar/Ocultar Código
 
 \includegraphics{images/marihuana cultura santander.png}
 
-Para las graficas anteriores se siguio la siguiente rutina:
+Para las graficas anteriores se siguio la rutina ue se depliega en el
+siguiente botón:
 
 Mostrar/Ocultar Código
 
+\phantomsection\label{section8}
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{reporte\_raizal}\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(data, columna, valores, etiquetas, nombre\_consumo, departamento, titulo\_grafico) \{}
@@ -994,13 +972,8 @@ Mostrar/Ocultar Código
 \end{Highlighting}
 \end{Shaded}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
-\tightlist
-\item
-  Consumo y edad:
-\end{enumerate}
+\hfill\break
+\textbf{6. Consumo y edad:}
 
 \includegraphics{images/basuco edad santander.png}
 
@@ -1012,10 +985,11 @@ Mostrar/Ocultar Código
 
 \includegraphics{images/marihuana edad santander.png}
 
-Para las graficas de la edad se siguió la siguiente rutina:
+Para las gráficas de la edad se siguió la rutina deplegable en el botón:
 
 Mostrar/Ocultar Código
 
+\phantomsection\label{section9}
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{analizar\_edades }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(data, columna, }\AttributeTok{nombre\_variable =} \StringTok{"Variable"}\NormalTok{, }\AttributeTok{intervalos\_breaks =} \ConstantTok{NULL}\NormalTok{) \{}
@@ -1132,5 +1106,144 @@ Mostrar/Ocultar Código
 \end{Highlighting}
 \end{Shaded}
 
+\hfill\break
+
+\subsection{Discusión}\label{discusiuxf3n}
+
+El estudio realizado en Santander revela hallazgos sobre el consumo de
+bazuco como lo es que la mayoría de los consumidores iniciaron el
+consumo de bazuco más de doce meses antes de la realización del estudio
+y un alto porcentaje dejó de consumir la sustancia en los meses
+siguientes al inicio. Se identificó consumo ligero de bazuco en
+poblaciones indígenas, negras y afrocolombianas. La mayoría de los
+consumidores reportan tener empleo, mientras que una minoría se dedica
+exclusivamente al ocio, los mismos se perciben con un estado de salud
+bueno, con pocos reportes negativos. Predomina el sexo masculino entre
+los consumidores y en términos de números, la edad promedio de los
+consumidores es de 35.67 años, con una mediana de 30.50 años. La edad
+con mayor frecuencia de consumo es de 23 años. La distribución de las
+edades presenta una desviación estándar de 12.95, una asimetría positiva
+(sesgo del 0.55) y una ligera leptocurtosis (curtosis de 0.55).\\
+
+El perfil del consumidor de cocaína analizado revela que la mayoría de
+los consumidores contribuye económicamente al hogar, lo cual es
+coherente con el alto porcentaje que reporta tener empleo y predominio
+de un nivel educativo medio. Se auto perciben con un estado de salud que
+oscila entre regular y muy bueno; la gran mayoría se identifican como
+hombre, coincidiendo con el sexo al nacer, primando heterosexualidad,
+con escasa representación de minorías. La edad promedio es de 31.44
+años, con una mediana de 27 y una moda de 23. La distribución de las
+edades presenta una desviación estándar de 10.39, una asimetría positiva
+(sesgo del 0.56) y una ligera leptocurtosis (curtosis de 0.56).\\
+
+Si se perfila el consumidor de éxtasis, se encuentra que predomina el
+género femenino, la mayoría de los encuestados no reportó consumo de
+éxtasis en los últimos 12 meses, y afirmaron contribuir económicamente
+al hogar, siendo coherente con el hecho de que la principal actividad es
+trabajar. El nivel educativo se concentra principalmente en secundaria y
+técnica, reportan un estado de salud regular o bueno y la mayoría se
+identifica como mestiza o blanca, con una minoría que se identifica como
+afrocolombiana. Relacionado al género, puntea la identidad de género
+femenina, siendo predominante la heterosexualidad.La edad promedio es de
+23.44 años, con una mediana y moda de 22 años. La distribución de las
+edades presenta una desviación estándar de 4, una ligera asimetría
+positiva y una ligera leptocurtosis. (sesgo y curtosis de 0.41).\\
+
+En Santander solo se reportó un caso de consumo de heroína, cuyas
+características son: persona de 23 años, de sexo e identidad femenina,
+heterosexual, luego de la primera vez reporta que sigue consumiendo la
+sustancia, aporta económicamente al hogar, en dicho año su nivel de
+escolaridad alcanzado era secundaria, trabajaba y reportaba una
+condición de salud regular.\\
+
+El consumo de marihuana destaca por su prevalencia en comparación con
+otras sustancias. El perfil del consumidor de marihuana se caracteriza
+por la dominancia en datos del sexo masculino, muchos reportaron no
+haber consumido marihuana en los últimos 12 meses y su contribución
+económica al hogar. Se observa una amplia variedad de niveles
+educativos, desde primaria hasta superior, incluyendo personas que no
+accedieron nunca a la educación. Se identifica una minoría perteneciente
+a grupos étnicos como indígenas, gitano/rom y afrocolombiano, y como
+principal actividad trabajar. Predomina la orientación heterosexual,
+aunque también se reportan casos de homosexualidad y bisexualidad, y si
+bien se reportan algunos casos con estado de salud malo o regular, la
+mayoría se percibe en buen estado de salud. La edad promedio es de 33.23
+años, con una mediana y moda de 30 años. La distribución de las edades
+presenta una desviación estándar de 12.99, un sesgo y una curtosis de
+0.8, lo que indica una distribución ligeramente asimétrica y más
+apuntada que una distribución normal.\\
+\strut \\
+
+\subsection{Conclusiones}\label{conclusiones}
+
+\textbf{I.} Antioquia presenta una alta prevalencia en el consumo de
+sustancias psicoactivas.\\
+
+\textbf{II.} El área metropolitana de Bucaramanga (incluyendo
+Floridablanca y Girón) concentra los índices más altos de consumo de
+sustancias psicoactivas en Santander.\\
+
+\textbf{III.} El inicio del consumo de sustancias psicoactivas en
+Santander suele ocurrir más de un año antes de la realización de la
+encuesta.\\
+
+\textbf{IV.} La mayoría de los encuestados reportaron no haber consumido
+sustancias psicoactivas en el último año.\\
+
+\textbf{V.} El nivel educativo de los consumidores se concentra
+principalmente en la educación secundaria-media, con menor
+representación de niveles técnicos y profesionales.\\
+
+\textbf{VI.} Los consumidores suelen contribuir económicamente al hogar,
+excepto en el caso del éxtasis.\\
+
+\textbf{VII.} La mayoría de los consumidores se encuentran activos
+laboralmente, en ningún caso se observa incapacidad o pensión.\\
+
+\textbf{VIII.} El consumo entre grupos minoritarios como indígenas,
+gitanos y afrodescendientes es bajo, y nulo en casos de palenqueros y
+raizales isleños.\\
+
+\textbf{IX.} Los consumidores de bazuco y marihuana suelen reportar un
+peor estado de salud en comparación con otros grupos, donde no se
+reportan deficiencias en esta.\\
+
+\textbf{X.} En todos los casos el consumidor solo se reconoce dos
+identidades de género, femenino y masculino.\\
+
+\textbf{XI.} La orientación sexual predominante entre los consumidores
+es la heterosexual, la homosexualidad y la bisexualidad son menos
+frecuentes entre los consumidores, y otras no son reconocidas.\\
+
+\textbf{XII.} El consumo de sustancias psicoactivas es predominantemente
+masculino, con algunas excepciones.\\
+
+\hfill\break
+
+\subsection{Referencias}\label{referencias}
+
+\textbf{Ministerio de Justicia y del Derecho.} (s/f). Gov.co. Recuperado
+el 10 de diciembre de 2024, de
+\url{https://www.minjusticia.gov.co/programas-co/ODC/Paginas/Situaci\%C3\%B3n-consumo.aspx}\\
+\strut \\
+
+\textbf{Encuesta Nacional de Consumo de Sustancias Psicoactivas en
+Población General - ENCSPA- 2019} - Colombia. (2020). {[}Data set{]}.\\
+\strut \\
+
+ChatGPT. (s/f). Chatgpt.com. Recuperado el 10 de diciembre de 2024, de
+\url{https://chatgpt.com/}\\
+\strut \\
+
+Códigos de Colores HTML. (2015, septiembre 3). HTML Color Codes.
+\url{https://htmlcolorcodes.com/es/}\\
+\strut \\
+Cohen, A. (2024, agosto 16). Metodología de un proyecto: ejemplo, cómo
+hacerla y qué incluye. Hubspot.es.
+\url{https://blog.hubspot.es/marketing/metodologia-proyecto}\\
+\strut \\
+Gemini - chat to supercharge your ideas. (s/f). Gemini. Recuperado el 10
+de diciembre de 2024, de \url{https://gemini.google.com/app}\\
+\strut \\
 
 \end{document}
